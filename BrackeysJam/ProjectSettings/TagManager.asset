@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Tilemap
+  - Map
   layers:
   - Default
   - TransparentFX
@@ -32,12 +32,12 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Interactible
+  - HurtHostile
+  - HitHostile
+  - HurtFriend
+  - HitFriend
   m_SortingLayers:
   - name: Default
     uniqueID: 0
