@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerCondition : Condition
 {
 	[HideInInspector]
-	public bool dashing, wallJumping, wallLeaping, attacking, down, dead;
+	public bool dashing, wallJumping, wallLeaping, attacking, down;
 
 	[HideInInspector]
 	public Timers timers;

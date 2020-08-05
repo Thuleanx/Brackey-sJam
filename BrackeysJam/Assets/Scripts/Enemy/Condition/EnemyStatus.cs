@@ -15,10 +15,12 @@ public class EnemyStatus : Status
 	}
 
 	void OnEnable() {
-		coefOnSpawn = Director.Instance.masterCoef;	
+		coefOnSpawn = (Director.Instance == null ? 1 : Director.Instance.masterCoef);	
 
 		damage = baseDamage + Mathf.CeilToInt(baseDamage * (Level - 1) * baseHealthGainPerLevel);
 		maxHealth = baseHealth + Mathf.CeilToInt(baseDamage * (Level - 1) * baseDamageGainPerLevel);
 		health = maxHealth;
+
+		speed = baseSpeed;
 	}
 }

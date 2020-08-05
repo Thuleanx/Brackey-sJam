@@ -11,7 +11,7 @@ public class MobCondition : Condition
 	public bool playerSighted;
 
 	[HideInInspector]
-	public bool dashing, wallJumping, wallLeaping, attacking;
+	public bool dashing, wallJumping, wallLeaping, attacking, spawning;
 
 	[HideInInspector]
 	public Timers timers;
@@ -26,13 +26,14 @@ public class MobCondition : Condition
 		timers = new Timers();
 		itimers = new IncrementalTimers();
 
-		timers.RegisterTimer("TurnCD");
+		timers.RegisterTimer("turnCD");
+		timers.RegisterTimer("jumpCD");
 	}
 
 	void LateUpdate() {
 	}
 
 	public bool LockedMovement {
-		get { return attacking; }
+		get { return attacking || spawning || dead; }
 	}
 }

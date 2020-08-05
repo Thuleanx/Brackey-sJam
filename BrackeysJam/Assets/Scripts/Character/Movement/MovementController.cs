@@ -5,12 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RaycastCollider2D), typeof(SpriteRenderer), typeof(PlayerCondition))]
+[RequireComponent(typeof(Status))]
 public class MovementController : MonoBehaviour
 {
 	#region Components
 	RaycastCollider2D raycastCollider;
 	SpriteRenderer sprite;
 	PlayerCondition condition;
+	Status status;
 	#endregion
 
 	#region Rigid body
@@ -29,7 +31,6 @@ public class MovementController : MonoBehaviour
 	[SerializeField] float minJumpHeight;
 	[SerializeField] float timeToJumpApexSeconds;
 
-	[SerializeField] float moveSpeed;
 	[SerializeField] float terminalVelocity = 10;
 	[SerializeField] float airSpeedModifier = .8f;
 	[SerializeField] float airEasingTime = .5f;
@@ -55,6 +56,7 @@ public class MovementController : MonoBehaviour
 		sprite = GetComponent<SpriteRenderer>();
 		condition = GetComponent<PlayerCondition>();
 		wallMovement = GetComponent<WallMovement>();
+		status = GetComponent<Status>();
 		CalculatePhysicsConstants();
 	}
 
@@ -107,10 +109,10 @@ public class MovementController : MonoBehaviour
 		if (!condition.LockedMovement)
 		{
 			if (condition.onGround)
-				velocity.x = InputManager.Instance.axisInput.x * moveSpeed;
+				velocity.x = InputManager.Instance.axisInput.x * status.speed;
 			else
 			{
-				velocity.x = InputManager.Instance.axisInput.x * moveSpeed * airSpeedModifier;
+				velocity.x = InputManager.Instance.axisInput.x * status.speed * airSpeedModifier;
 
 				// float targetVelX = InputManager.Instance.axisInput.x * moveSpeed * airSpeedModifier;
 				// velocity.x = Mathf.SmoothDamp(velocity.x, targetVelX, ref airAccel, airEasingTime);

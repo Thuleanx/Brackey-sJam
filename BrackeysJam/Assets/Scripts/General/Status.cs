@@ -6,9 +6,10 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
 	public int baseHealth, baseDamage;
+	public float baseSpeed;
 
 	[HideInInspector]
-	public float damage, health, maxHealth;
+	public float damage, health, maxHealth, speed;
 
 	public float Health {
 		get { return health; }

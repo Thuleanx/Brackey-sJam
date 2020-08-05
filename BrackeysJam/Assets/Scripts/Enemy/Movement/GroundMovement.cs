@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(RaycastCollider2D), typeof(MobCondition), typeof(GroundEnemyAnimator))]
+[RequireComponent(typeof(Status))]
 public class GroundMovement : MonoBehaviour
 {
 	#region Component
@@ -12,14 +13,15 @@ public class GroundMovement : MonoBehaviour
 	GameObject player;
 	MobCondition condition;
 	GroundEnemyAnimator anim;
+	Status status;
 
 	#endregion
 
 	#region Rigid Body
 
-	[SerializeField] float jumpHeight = 1.5f, timeToJumpApexSeconds = .2f, speed = 3f;
-	[SerializeField] float turnAdjustmentDistance = 1f;
-	float jumpVelocity, gravity, turnCooldownSeconds = 1f;
+	[SerializeField] float jumpHeight = 1.5f, timeToJumpApexSeconds = .2f;
+	[SerializeField] float turnAdjustmentDistance = 1f, jumpCoolDownSeconds = 2f;
+	float jumpVelocity, gravity, turnCooldownSeconds;
 
 	Vector2 velocity;
 
@@ -31,29 +33,35 @@ public class GroundMovement : MonoBehaviour
 		condition = GetComponent<MobCondition>();
 		anim = GetComponent<GroundEnemyAnimator>();
 		player = GameObject.FindGameObjectWithTag("Player");
+		status = GetComponent<Status>();
 
 		CalculatePhysics();
 	}
 
 	void Start() {
+		turnCooldownSeconds = turnAdjustmentDistance / status.speed;
+
 		Turn();
+	}
+
+	void OnEnable() {
+		velocity = Vector2.zero;
 	}
 
 	void CalculatePhysics() {
 		gravity = 2 * jumpHeight / (timeToJumpApexSeconds * timeToJumpApexSeconds);	
 		jumpVelocity = gravity * timeToJumpApexSeconds;
-		turnCooldownSeconds = turnAdjustmentDistance / speed;
 	}
 
 	void Update() {
 
-		if (controller.CombinedInfo.AnyBot)
+		if (controller.CombinedInfo.AnyBot || controller.CombinedInfo.AnyTop)
 			velocity.y = 0;
 		
 		velocity.y -= gravity * Time.deltaTime;
 
 		if (!condition.LockedMovement) {
-			velocity.x = condition.faceDir * speed;
+			velocity.x = condition.faceDir * status.speed;
 
 			// see player and not the same direction
 			if (condition.playerSighted && !Mathf.Approximately(Mathf.Sign(player.transform.position.x- transform.position.x), condition.faceDir)) {
@@ -71,7 +79,8 @@ public class GroundMovement : MonoBehaviour
 			// if stumble onto wall, turn anyway (unless see player, then you jump up)
 			if (condition.onWall) {
 				if (!condition.playerSighted) Turn();
-				else Jump();
+				else if (!condition.timers.ActiveAndNotExpired("jumpCD"))
+					Jump();
 			}
 		}
 			
@@ -99,13 +108,14 @@ public class GroundMovement : MonoBehaviour
 
 	void Turn() {
 		condition.faceDir *= -1;
-		velocity.x = condition.faceDir * speed;	
+		velocity.x = condition.faceDir * status.speed;	
 		condition.timers.StartTimer("turnCD", turnCooldownSeconds);
 	}
 
 	void Jump() {
 		velocity.y = jumpVelocity;
 		anim.State = GroundEnemyState.Jump;
+		condition.timers.StartTimer("jumpCD", jumpCoolDownSeconds);
 	}
 
 	public void ResetHorizontalVelocity() {

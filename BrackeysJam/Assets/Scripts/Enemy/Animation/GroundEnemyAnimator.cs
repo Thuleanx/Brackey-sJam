@@ -16,6 +16,11 @@ public class GroundEnemyAnimator : MonoBehaviour
 		condition = GetComponent<MobCondition>();
 	}
 
+	void OnEnable() {
+		condition.spawning = true;
+		State = GroundEnemyState.Spawn;
+	}
+
 	public GroundEnemyState State {
 		get { return (GroundEnemyState) anim.GetInteger("state"); }
 		set { anim.SetInteger("state", (int) value); }
@@ -31,6 +36,8 @@ public class GroundEnemyAnimator : MonoBehaviour
 
 		if (State != GroundEnemyState.Attack)
 			condition.attacking = false;
+		if (State != GroundEnemyState.Spawn)
+			condition.spawning = false;
 	}
 
 	public void Reset() {
