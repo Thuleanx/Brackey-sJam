@@ -28,7 +28,7 @@ public class Interactable : MonoBehaviour
 
 	void Update() {
 		if (interactable && inRange) {
-			if (InputManager.Instance.interactDown)
+			if (InputManager.KeyDown(InputManager.Instance.interact))
 				interactAction.Invoke();
 		}
 	}

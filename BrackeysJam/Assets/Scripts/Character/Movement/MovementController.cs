@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(RaycastCollider2D), typeof(SpriteRenderer), typeof(PlayerCondition))]
+[RequireComponent(typeof(RaycastCollider2D))]
 [RequireComponent(typeof(Status))]
+[RequireComponent(typeof(PlayerCondition))]
+[RequireComponent(typeof(PlayerAnimationController))]
 public class MovementController : MonoBehaviour
 {
 	#region Components
 	RaycastCollider2D raycastCollider;
-	SpriteRenderer sprite;
 	PlayerCondition condition;
 	Status status;
+	PlayerAnimationController anim;
 	#endregion
 
 	#region Rigid body
-	Vector2 velocity;
+	[HideInInspector]
+	public Vector2 velocity;
 	#endregion
 
 	#region Ability
@@ -35,7 +38,8 @@ public class MovementController : MonoBehaviour
 	[SerializeField] float airSpeedModifier = .8f;
 	[SerializeField] float airEasingTime = .5f;
 
-	float gravity;
+	[HideInInspector]
+	public float gravity;
 
 	float jumpVelocityMax;
 	float jumpVelocityMin;
@@ -53,10 +57,10 @@ public class MovementController : MonoBehaviour
 
 	void Awake() {
 		raycastCollider = GetComponent<RaycastCollider2D>();
-		sprite = GetComponent<SpriteRenderer>();
 		condition = GetComponent<PlayerCondition>();
 		wallMovement = GetComponent<WallMovement>();
 		status = GetComponent<Status>();
+		anim = GetComponent<PlayerAnimationController>();
 		CalculatePhysicsConstants();
 	}
 
@@ -94,44 +98,43 @@ public class MovementController : MonoBehaviour
 
 	void Update()
 	{
-		velocity.y -= gravity * Time.deltaTime;
+		if (!condition.LockedVelocity) {
+			velocity.y -= gravity * Time.deltaTime;
 
-		if (raycastCollider.collisionInfo.AnyTop || condition.onGround)
-			velocity.y = 0;
+			if (raycastCollider.collisionInfo.AnyTop || condition.onGround)
+				velocity.y = 0;
 
-		if (!condition.down)
-		{
 			if (InputManager.Instance.axisInput.x != 0)
 				condition.faceDir = Mathf.Sign(InputManager.Instance.axisInput.x);
-			sprite.flipX = condition.faceDir < 0;
-		}
 
-		if (!condition.LockedMovement)
-		{
-			if (condition.onGround)
-				velocity.x = InputManager.Instance.axisInput.x * status.speed;
-			else
+			if (!condition.LockedMovement)
 			{
-				velocity.x = InputManager.Instance.axisInput.x * status.speed * airSpeedModifier;
 
-				// float targetVelX = InputManager.Instance.axisInput.x * moveSpeed * airSpeedModifier;
-				// velocity.x = Mathf.SmoothDamp(velocity.x, targetVelX, ref airAccel, airEasingTime);
+				if (condition.onGround)
+					velocity.x = InputManager.Instance.axisInput.x * status.speed;
+				else
+				{
+					velocity.x = InputManager.Instance.axisInput.x * status.speed * airSpeedModifier;
+
+					// float targetVelX = InputManager.Instance.axisInput.x * moveSpeed * airSpeedModifier;
+					// velocity.x = Mathf.SmoothDamp(velocity.x, targetVelX, ref airAccel, airEasingTime);
+				}
+
+				// Jump
+				if (InputManager.Instance.timers.ActiveAndNotExpired("jumpBuffer") &&
+					condition.timers.ActiveAndNotExpired("coyoteBuffer"))
+				{
+					Jump();
+					InputManager.Instance.timers.SetActive("jumpBuffer", false);
+					condition.timers.SetActive("coyoteBuffer", false);
+				}
+				else if (InputManager.KeyUp(InputManager.Instance.jump))
+					LowJump();
 			}
 
-			// Jump
-			if (InputManager.Instance.timers.ActiveAndNotExpired("jumpBuffer") &&
-				condition.timers.ActiveAndNotExpired("coyoteBuffer"))
-			{
-				Jump();
-				InputManager.Instance.timers.SetActive("jumpBuffer", false);
-				condition.timers.SetActive("coyoteBuffer", false);
-			}
-			else if (InputManager.Instance.jumpRelease)
-				LowJump();
+			// terminal velocity
+			velocity.y = Mathf.Clamp(velocity.y, -terminalVelocity, Mathf.Infinity);
 		}
-
-		// terminal velocity
-		velocity.y = Mathf.Clamp(velocity.y, -terminalVelocity, Mathf.Infinity);
 
 		raycastCollider.Move(
 			velocity * Time.deltaTime,
@@ -142,6 +145,19 @@ public class MovementController : MonoBehaviour
 	void LateUpdate() {
 		ConditionUpdate();
 		TimerChecks();
+		UpdateAnimation();
+	}
+
+	void UpdateAnimation() {
+		if (!anim.LockedAnimation()) {
+			if (condition.onGround && velocity.x == 0) 
+				anim.State = PlayerState.Idle;
+			else if (condition.onGround) 
+				anim.State = PlayerState.Run;
+			else if (velocity.y <= -1)
+				anim.State = PlayerState.Fall;
+			else anim.State = PlayerState.Jump;
+		}
 	}
 
 	#region Abilities
@@ -149,7 +165,7 @@ public class MovementController : MonoBehaviour
 		velocity.y = jumpVelocityMax;
 
 		// if jump button released before touching the ground
-		if (!InputManager.Instance.jump)
+		if (!InputManager.KeyPress(InputManager.Instance.jump))
 			LowJump();
 	}
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MobCondition), typeof(GroundEnemyAnimator))]
-public class GroundEnemyCombat : EnemyCombat
+public class GroundEnemyCombat : CombatManager
 {
 	// raycast for hit detection
 

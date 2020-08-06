@@ -41,6 +41,9 @@ public class FlyingEnemyAnimator : MonoBehaviour
 
 		if (State != FlyingEnemyState.Spawn)
 			condition.spawning = false;
+
+		if (condition.dead)
+			State = FlyingEnemyState.Dead;
 	}
 
 	public void Reset() {

@@ -40,8 +40,6 @@ public class GroundMovement : MonoBehaviour
 
 	void Start() {
 		turnCooldownSeconds = turnAdjustmentDistance / status.speed;
-
-		Turn();
 	}
 
 	void OnEnable() {
@@ -83,6 +81,9 @@ public class GroundMovement : MonoBehaviour
 					Jump();
 			}
 		}
+
+		if (condition.dead)
+			velocity.x = 0;
 			
 		controller.Move(velocity * Time.deltaTime, false, condition.faceDir);
 	}
