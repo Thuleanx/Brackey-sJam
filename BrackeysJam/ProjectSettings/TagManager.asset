@@ -58,6 +58,9 @@ TagManager:
   - name: Entities
     uniqueID: 1173081539
     locked: 0
+  - name: Front
+    uniqueID: 2437756205
+    locked: 0
   - name: FX
     uniqueID: 1688176697
     locked: 0
