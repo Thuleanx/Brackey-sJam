@@ -1,0 +1,1163 @@
+fileFormatVersion: 2
+guid: d2f8893163bbb424cbc189201ccb9d8d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1320316887843033235
+    second: Ground02_0
+  - first:
+      213: 8185020726309639472
+    second: Ground02_1
+  - first:
+      213: 3567522281691382904
+    second: Ground02_2
+  - first:
+      213: 1219521293418158968
+    second: Ground02_3
+  - first:
+      213: -8393131836893494368
+    second: Ground02_4
+  - first:
+      213: -3564990607105647821
+    second: Ground02_5
+  - first:
+      213: -1278768102006041477
+    second: Ground02_6
+  - first:
+      213: 7173255403777342451
+    second: Ground02_7
+  - first:
+      213: -3453337107175286975
+    second: Ground02_8
+  - first:
+      213: -8142144969539156475
+    second: Ground02_9
+  - first:
+      213: 2430418009825255799
+    second: Ground02_10
+  - first:
+      213: -6336638604322278139
+    second: Ground02_11
+  - first:
+      213: -8684009765204668519
+    second: Ground02_12
+  - first:
+      213: 5655393134909422728
+    second: Ground02_13
+  - first:
+      213: 8324703668127382075
+    second: Ground02_14
+  - first:
+      213: 5235917506449337337
+    second: Ground02_15
+  - first:
+      213: -7227645636965641822
+    second: Ground02_16
+  - first:
+      213: 4938655490357150462
+    second: Ground02_17
+  - first:
+      213: -3874722144462999320
+    second: Ground02_18
+  - first:
+      213: -7150305560360895567
+    second: Ground02_19
+  - first:
+      213: -6727414236631028156
+    second: Ground02_20
+  - first:
+      213: 3218730875175990282
+    second: Ground02_21
+  - first:
+      213: 3025584088189418741
+    second: Ground02_22
+  - first:
+      213: -8753161418698908514
+    second: Ground02_23
+  - first:
+      213: 7354152093300696761
+    second: Ground02_24
+  - first:
+      213: -3218211989255747654
+    second: Ground02_25
+  - first:
+      213: -7340308889280438302
+    second: Ground02_26
+  - first:
+      213: -6814935589006358358
+    second: Ground02_27
+  - first:
+      213: 6445023989467367799
+    second: Ground02_28
+  - first:
+      213: -4477570650600252970
+    second: Ground02_29
+  - first:
+      213: -2984891486331256095
+    second: Ground02_30
+  - first:
+      213: 8818389352999095495
+    second: Ground02_31
+  - first:
+      213: 4275188420734673620
+    second: Ground02_32
+  - first:
+      213: 7481956658736532793
+    second: Ground02_33
+  - first:
+      213: 6030651610632997561
+    second: Ground02_34
+  - first:
+      213: 565215800949322372
+    second: Ground02_35
+  - first:
+      213: 705442718579209174
+    second: Ground02_36
+  - first:
+      213: 2742988875307183404
+    second: Ground02_37
+  - first:
+      213: -1003984724015570289
+    second: Ground02_38
+  - first:
+      213: 8822422333311254159
+    second: Ground02_39
+  - first:
+      213: -537570232733945824
+    second: Ground02_40
+  - first:
+      213: 1358034104934313376
+    second: Ground02_41
+  - first:
+      213: 1834247131846980363
+    second: Ground02_42
+  - first:
+      213: -1077868124774880820
+    second: Ground02_43
+  - first:
+      213: 6627478475208210650
+    second: Ground02_44
+  - first:
+      213: 7166033894155904216
+    second: Ground02_45
+  - first:
+      213: 6347531538627899042
+    second: Ground02_46
+  - first:
+      213: 8565950783011942842
+    second: Ground02_47
+  - first:
+      213: 7277997134573865340
+    second: Ground02_48
+  - first:
+      213: -425459887894850223
+    second: Ground02_49
+  - first:
+      213: -4819711109331668196
+    second: Ground02_50
+  - first:
+      213: 1037675242818803891
+    second: Ground02_51
+  - first:
+      213: -9170237134557406976
+    second: Ground02_0
+  - first:
+      213: -8189892363126486365
+    second: Ground02_1
+  - first:
+      213: 8765684290225177088
+    second: Ground02_2
+  - first:
+      213: 1050654009540412441
+    second: Ground02_3
+  - first:
+      213: 6434915483484104878
+    second: Ground02_4
+  - first:
+      213: -3190038939355556312
+    second: Ground02_5
+  - first:
+      213: -8004645558278830619
+    second: Ground02_6
+  - first:
+      213: 8960572405792760092
+    second: Ground02_7
+  - first:
+      213: -4274470169637378183
+    second: Ground02_8
+  - first:
+      213: -3488530291787889849
+    second: Ground02_9
+  - first:
+      213: -7617517355235676039
+    second: Ground02_10
+  - first:
+      213: -7487026196169794633
+    second: Ground02_11
+  - first:
+      213: 2112570878198671330
+    second: Ground02_12
+  - first:
+      213: 4221629081754215523
+    second: Ground02_13
+  - first:
+      213: 98033640071246767
+    second: Ground02_14
+  - first:
+      213: -7836456313272145712
+    second: Ground02_15
+  - first:
+      213: 8420331389486830747
+    second: Ground02_16
+  - first:
+      213: 926875865542423020
+    second: Ground02_17
+  - first:
+      213: 4304585343650361328
+    second: Ground02_18
+  - first:
+      213: 6183443907625563519
+    second: Ground02_19
+  - first:
+      213: 1176408788590076976
+    second: Ground02_20
+  - first:
+      213: -7220490701780717338
+    second: Ground02_21
+  - first:
+      213: 120368736539183468
+    second: Ground02_22
+  - first:
+      213: -6231963599535053725
+    second: Ground02_23
+  - first:
+      213: -830303885432742192
+    second: Ground02_24
+  - first:
+      213: -2244573409637998253
+    second: Ground02_25
+  - first:
+      213: 3220433407697747842
+    second: Ground02_26
+  - first:
+      213: 7125000692701593715
+    second: Ground02_27
+  - first:
+      213: 3161992946627924391
+    second: Ground02_28
+  - first:
+      213: 3109778418620048376
+    second: Ground02_29
+  - first:
+      213: 1675617299029900161
+    second: Ground02_30
+  - first:
+      213: -7902391133456469005
+    second: Ground02_31
+  - first:
+      213: 8809696828354676349
+    second: Ground02_32
+  - first:
+      213: 6956693938465205256
+    second: Ground02_33
+  - first:
+      213: -5575906650639988171
+    second: Ground02_34
+  - first:
+      213: -295212222534704360
+    second: Ground02_35
+  - first:
+      213: -2934844595277744991
+    second: Ground02_36
+  - first:
+      213: -2231984201246941361
+    second: Ground02_37
+  - first:
+      213: -4023373794838101285
+    second: Ground02_38
+  - first:
+      213: -6803899632209355882
+    second: Ground02_39
+  - first:
+      213: -4584029724225914266
+    second: Ground02_40
+  - first:
+      213: 1268293703646514904
+    second: Ground02_41
+  - first:
+      213: 5349200356362152654
+    second: Ground02_42
+  - first:
+      213: 6523260088415515266
+    second: Ground02_43
+  - first:
+      213: -6899414500034150317
+    second: Ground02_44
+  - first:
+      213: 7001774002151467571
+    second: Ground02_45
+  - first:
+      213: -4750821553713388168
+    second: Ground02_46
+  - first:
+      213: -6041107674750109651
+    second: Ground02_47
+  - first:
+      213: 4601691771489011297
+    second: Ground02_48
+  - first:
+      213: -2403658501449032824
+    second: Ground02_49
+  - first:
+      213: 8948903613349367532
+    second: Ground02_50
+  - first:
+      213: 4160346073876002672
+    second: Ground06_0
+  - first:
+      213: 3132967353082349366
+    second: Ground06_1
+  - first:
+      213: 4374054799586060910
+    second: Ground06_2
+  - first:
+      213: 2960083465853951792
+    second: Ground06_3
+  - first:
+      213: -3749613810306528364
+    second: Ground06_4
+  - first:
+      213: 2141836028028108154
+    second: Ground06_5
+  - first:
+      213: -7122952427329039090
+    second: Ground06_6
+  - first:
+      213: 5312095345973068822
+    second: Ground06_7
+  - first:
+      213: 1192883931182857815
+    second: Ground06_8
+  - first:
+      213: 584263683527972824
+    second: Ground06_9
+  - first:
+      213: -4765619346938010673
+    second: Ground06_10
+  - first:
+      213: -3823096012197667684
+    second: Ground06_11
+  - first:
+      213: 7958791699434997212
+    second: Ground06_12
+  - first:
+      213: -5722069192111552753
+    second: Ground06_13
+  - first:
+      213: -1485035579171312056
+    second: Ground06_14
+  - first:
+      213: -4585825439698225050
+    second: Ground06_15
+  - first:
+      213: -3162271976627407516
+    second: Ground06_16
+  - first:
+      213: 8623078065026806368
+    second: Ground06_17
+  - first:
+      213: 2217200638102665032
+    second: Ground06_18
+  - first:
+      213: -4889095802705473229
+    second: Ground06_19
+  - first:
+      213: -6145387295897953434
+    second: Ground06_20
+  - first:
+      213: -5228596796142493486
+    second: Ground06_21
+  - first:
+      213: 7329040243345125201
+    second: Ground06_22
+  - first:
+      213: 6329212108805429654
+    second: Ground06_23
+  - first:
+      213: 6617131477493414630
+    second: Ground06_24
+  - first:
+      213: -7839453602462525660
+    second: Ground06_25
+  - first:
+      213: -4819424527577443342
+    second: Ground07_0
+  - first:
+      213: 2257498001501362939
+    second: Ground07_1
+  - first:
+      213: 2239089567844972714
+    second: Ground07_2
+  - first:
+      213: 820962071179346545
+    second: Ground07_3
+  - first:
+      213: 827598600838176804
+    second: Ground07_4
+  - first:
+      213: 5645655786927505380
+    second: Ground07_5
+  - first:
+      213: -5342996284266108908
+    second: Ground07_6
+  - first:
+      213: 5964812484448173050
+    second: Ground07_7
+  - first:
+      213: -5658630462147574641
+    second: Ground07_8
+  - first:
+      213: 6019618936547913856
+    second: Ground07_9
+  - first:
+      213: -2235692547498671099
+    second: Ground07_10
+  - first:
+      213: -3273587724514843472
+    second: Ground07_11
+  - first:
+      213: -3137052653517802670
+    second: Ground07_12
+  - first:
+      213: -6145825216466818532
+    second: Ground07_13
+  - first:
+      213: -8372122093630868827
+    second: Ground07_14
+  - first:
+      213: 7101538341806803257
+    second: Ground07_15
+  - first:
+      213: 1055849884274114643
+    second: Ground07_16
+  - first:
+      213: 2964098501192433928
+    second: Ground07_17
+  - first:
+      213: 6139169359789759797
+    second: Ground07_18
+  - first:
+      213: -5896778598599945368
+    second: Ground07_19
+  - first:
+      213: 4148919820169794636
+    second: Ground07_20
+  - first:
+      213: -339362076291153672
+    second: Ground07_21
+  - first:
+      213: 8370933871334848849
+    second: Ground07_22
+  - first:
+      213: 6121529765257368378
+    second: Ground07_23
+  - first:
+      213: -3301131281917115848
+    second: Ground07_24
+  - first:
+      213: -5570656058233457469
+    second: Ground07_25
+  - first:
+      213: 1080919197893826641
+    second: Ground07_26
+  - first:
+      213: -7364192958855896207
+    second: Ground07_27
+  - first:
+      213: 5766329941188160282
+    second: Ground07_28
+  - first:
+      213: -7704267576194819073
+    second: Ground07_29
+  - first:
+      213: 8339436896589774230
+    second: Ground07_30
+  - first:
+      213: 6061752150379307008
+    second: Ground07_31
+  - first:
+      213: 7722793669134048423
+    second: Ground07_32
+  - first:
+      213: 8589753567736319238
+    second: Ground07_33
+  - first:
+      213: 2973193630114122314
+    second: Ground07_34
+  - first:
+      213: 4406882422648914359
+    second: Ground07_35
+  - first:
+      213: -8498512152878578894
+    second: Ground07_36
+  - first:
+      213: -6433278837543005623
+    second: Ground07_37
+  - first:
+      213: 589483045656888529
+    second: Ground07_38
+  - first:
+      213: 574420900135079758
+    second: Ground07_39
+  - first:
+      213: -3939533156634290166
+    second: Ground07_40
+  - first:
+      213: -1969691952031404701
+    second: Ground07_41
+  - first:
+      213: 2538989140758340700
+    second: Ground07_42
+  - first:
+      213: 6618988004956268455
+    second: Ground07_43
+  - first:
+      213: -7217632716019906757
+    second: Ground07_44
+  - first:
+      213: 6938882678313885313
+    second: Ground07_45
+  - first:
+      213: 2494725415543301996
+    second: Ground07_46
+  - first:
+      213: -5242897667398649348
+    second: Ground07_47
+  - first:
+      213: -3829891009087353652
+    second: Ground08_0
+  - first:
+      213: -4913873573118137832
+    second: Ground08_1
+  - first:
+      213: -5512062090822330508
+    second: Ground08_2
+  - first:
+      213: -2483343247557187720
+    second: Ground08_3
+  - first:
+      213: 2918180197227552842
+    second: Ground08_4
+  - first:
+      213: -7215422227154830081
+    second: Ground08_5
+  - first:
+      213: 1584910701557696813
+    second: Ground08_6
+  - first:
+      213: 3116369724994765043
+    second: Ground08_7
+  - first:
+      213: 4545222433048953736
+    second: Ground08_8
+  - first:
+      213: 8493087702741574490
+    second: Ground08_9
+  - first:
+      213: 6102411339113859624
+    second: Ground08_10
+  - first:
+      213: -2520361271989052404
+    second: Ground08_11
+  - first:
+      213: 5499530819316256620
+    second: Ground08_12
+  - first:
+      213: 4000754018995269482
+    second: Ground08_13
+  - first:
+      213: 6864980113025494899
+    second: Ground08_14
+  - first:
+      213: 6510677523019097913
+    second: Ground08_15
+  - first:
+      213: 2123234805215799527
+    second: Ground08_16
+  - first:
+      213: 8482037053773905542
+    second: Ground08_17
+  - first:
+      213: 8599991303533203813
+    second: Ground08_18
+  - first:
+      213: -2891593619239866107
+    second: Ground08_19
+  - first:
+      213: 7806690754283272956
+    second: Ground08_20
+  - first:
+      213: 921075304693154739
+    second: Ground08_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ground08_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccc2ea3b6e79dac0800000000000000
+      internalID: -3829891009087353652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a2d13250a6ecbb0800000000000000
+      internalID: -4913873573118137832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47753a88bb83183b0800000000000000
+      internalID: -5512062090822330508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8772df14974698dd0800000000000000
+      internalID: -2483343247557187720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40e35e9d657f7820800000000000000
+      internalID: 2918180197227552842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc7afd96bbaddb90800000000000000
+      internalID: -7215422227154830081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29cf07c2ebbef510800000000000000
+      internalID: 1584910701557696813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_7
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0481fe0c19f3b20800000000000000
+      internalID: 3116369724994765043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_8
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8830503a8bfd31f30800000000000000
+      internalID: 4545222433048953736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53662074428dd570800000000000000
+      internalID: 8493087702741574490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_10
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a823de7ce10b450800000000000000
+      internalID: 6102411339113859624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_11
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cd07dc6c0e50dd0800000000000000
+      internalID: -2520361271989052404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_12
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f88a47422425c40800000000000000
+      internalID: 5499530819316256620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_13
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fede75598858730800000000000000
+      internalID: 4000754018995269482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_14
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f61036a0f454f50800000000000000
+      internalID: 6864980113025494899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_15
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9376cae46b29a5a50800000000000000
+      internalID: 6510677523019097913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_16
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e822a35ece377d10800000000000000
+      internalID: 2123234805215799527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_17
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ef4e9b2cf36b570800000000000000
+      internalID: 8482037053773905542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_18
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5619b8e968e495770800000000000000
+      internalID: 8599991303533203813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_19
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501fb627ceefed7d0800000000000000
+      internalID: -2891593619239866107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_20
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa716021efe65c60800000000000000
+      internalID: 7806690754283272956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground08_21
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3ce9b0c1158cc00800000000000000
+      internalID: 921075304693154739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
