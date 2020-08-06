@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3550122906884213516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3550122906884213518}
+  - component: {fileID: 3550122906884213517}
+  - component: {fileID: 3550122906884213519}
+  - component: {fileID: 3550122906884213520}
+  - component: {fileID: 3550122906884213521}
+  m_Layer: 0
+  m_Name: Game Master
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3550122906884213518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550122906884213516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.5613184, y: -0.46049026, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3550122906884213517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550122906884213516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6400e53d1a5480eb6308d6d5f156d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputBufferTimeSeconds: 0.2
+  attackInputBufferTimeSeconds: 0.5
+  axisInput: {x: 0, y: 0}
+  jump: 0
+  interact: 0
+  S1: 0
+  S2: 0
+  S3: 0
+  S4: 0
+--- !u!114 &3550122906884213519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550122906884213516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929381804958b4204ae6e99c2a1cdb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapReadTag: Map
+--- !u!114 &3550122906884213520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550122906884213516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34eb1a0b1e10541eebaa5db1437feaa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+  masterCoef: 0
+--- !u!114 &3550122906884213521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550122906884213516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d22247c969c444efad8c3b8f02baddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCanvasTag: UICanvas
+  expansionConstant: 10
+  pools:
+  - tag: 'Message: Open Chest'
+    prefab: {fileID: 2668455372215584637, guid: b997b1b0cc5e7453da0de3eba406ab3d,
+      type: 3}
+    defaultCount: 10
+    UI: 1
