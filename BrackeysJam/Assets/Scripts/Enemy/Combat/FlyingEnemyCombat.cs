@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(FlyingMovement))]
 [RequireComponent(typeof(FlyingEnemyAnimator))]
 [RequireComponent(typeof(Status))]
-public class FlyingEnemyCombat : MonoBehaviour {
+public class FlyingEnemyCombat : CombatManager {
 
 	#region Components
 	MobCondition condition;

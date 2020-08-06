@@ -41,6 +41,9 @@ public class FlyingMovement : MonoBehaviour {
 			velocity = Vector2.ClampMagnitude(velocity, speed);
 		}
 
+		if (condition.dead)
+			velocity = Vector2.zero;
+
 		transform.Translate(velocity * Time.deltaTime);
 	}
 

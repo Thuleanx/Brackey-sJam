@@ -10,10 +10,12 @@ public class Hitbox : MonoBehaviour
 
 	[SerializeField] LayerMask hurtboxMask;
 	[SerializeField] float damageFrequency;
+	[SerializeField] float damageMultiplier = 1f;
 
 	Dictionary<Hurtbox, float> hitlast = new Dictionary<Hurtbox, float>();	
 
 	static int maxHitboxResults = 10;
+
 
 	void Start() {
 		box = GetComponent<BoxCollider2D>();
@@ -34,7 +36,6 @@ public class Hitbox : MonoBehaviour
 			// guaranteed to have hurtbox
 			results.Add(receiver[i].GetComponent<Hurtbox>());
 		}
-
 	
 		return results;
 	}
@@ -48,7 +49,7 @@ public class Hitbox : MonoBehaviour
 
 		foreach (Hurtbox hurtbox in hurtboxes) {
 			if (!hitlast.ContainsKey(hurtbox) || (damageFrequency > 0 && Time.time - hitlast[hurtbox] >= 1 / damageFrequency)) {
-				if (hurtbox.RegisterHit(status.damage))
+				if (hurtbox.RegisterHit(status.damage * damageMultiplier))
 					hitlast[hurtbox] = Time.time;
 			}
 		}

@@ -14,7 +14,7 @@ public class Condition : MonoBehaviour
 	[HideInInspector]
 	public bool dead;
 
-	public void CommitDie() {
-		gameObject.SetActive(false);
+	void OnEnable() {
+		onGround = onWall = dead = false;
 	}
 }

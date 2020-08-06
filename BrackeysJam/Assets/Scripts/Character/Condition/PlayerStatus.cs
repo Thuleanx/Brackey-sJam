@@ -23,7 +23,7 @@ public class PlayerStatus : Status
 	}
 
 	void LateUpdate() {
-		damage = Mathf.FloorToInt(baseDamage * (Level - 1) * baseHealthGainPerLevel);
+		damage = Mathf.FloorToInt(baseDamage * (1 +  (Level - 1) * baseHealthGainPerLevel));
 		health += healthRegen * Time.deltaTime;
 		speed = baseSpeed;
 	}

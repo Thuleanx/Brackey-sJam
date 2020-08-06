@@ -26,6 +26,7 @@ public class GroundEnemyAnimator : MonoBehaviour
 		set { anim.SetInteger("state", (int) value); }
 	}
 
+
 	void LateUpdate() {
 		sprite.flipX = condition.faceDir > 0;
 
@@ -38,6 +39,8 @@ public class GroundEnemyAnimator : MonoBehaviour
 			condition.attacking = false;
 		if (State != GroundEnemyState.Spawn)
 			condition.spawning = false;
+		if (condition.dead)
+			State = GroundEnemyState.Death;
 	}
 
 	public void Reset() {

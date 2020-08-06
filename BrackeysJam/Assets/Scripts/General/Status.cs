@@ -13,6 +13,12 @@ public class Status : MonoBehaviour
 
 	public float Health {
 		get { return health; }
-		set { health = Mathf.Clamp(value, 0, maxHealth); }
+		set { 
+			health = Mathf.Clamp(value, 0, maxHealth); 
+		}
+	}
+
+	public void CommitDie() {
+		gameObject.SetActive(false);
 	}
 }
