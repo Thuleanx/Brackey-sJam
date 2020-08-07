@@ -56,6 +56,15 @@ public class PlayerCombat : CombatManager {
 		alt[(int) ability.originalState] = ability.attackState;
 	}
 
+	public float GetCoolDown(PlayerState state) {
+		string name = Enum.GetName(typeof(PlayerState), state);
+		return itimers.TimeLeft(name);
+	}
+
+	public float GetTotalCoolDown(PlayerState state) {
+		return abilities[(int) state].cooldown;
+	}
+
 	void Update() {
 		foreach (var attack in atkStates) if (!condition.LockedAttack) {
 			string name = Enum.GetName(typeof(PlayerState), attack);

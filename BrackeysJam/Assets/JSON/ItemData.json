@@ -1,0 +1,54 @@
+{
+	"Hooves" : {
+		"Name" : "Hooves",
+		"StackingType" : "Linear",
+		"BaseEffect" : 0.14,
+		"StackingEffect" : 0.07
+	},
+	"Teddy" : {
+		"Name" : "Teddy",
+		"StackingType" : "Hyperbolic",
+		"StackingEffect" : 0.15
+	},
+	"ArcaneShield" : {
+		"Name" : "Arcane Shield",
+		"StackingType" : "Linear",
+		"BaseEffect" : 0.2,
+		"StackingEffect" : 0.08
+	},
+	"GolemHeart" : {
+		"Name" : "Golem Heart",
+		"StackingType" : "Linear",
+		"BaseEffect" : 1,
+		"StackingEffect" : 0.2
+	},
+	"PainAttunement" : {
+		"Name" : "Pain Attunement",
+		"StackingType" : "Linear",
+		"BaseEffect" : 0.3,
+		"StackingEffect" : 0.15
+	},
+	"Menace" : {
+		"Name" : "Menace",
+		"StackingType" : "Linear",
+		"BaseEffect" : 0.1,
+		"StackingEffect" : 0.05
+	},
+	"Constitution": {
+		"Name" : "Constitution",
+		"StackingType" : "Linear",
+		"BaseEffect" : 100,
+		"StackingEffect" : 50
+	},
+	"Thirst": {
+		"Name" : "Thirst",
+		"StackingType" : "Linear",
+		"BaseEffect" : 1,
+		"StackingEffect" : 1
+	},
+	"Assassination": {
+		"Name" : "Thirst",
+		"StackingType" : "Exponential",
+		"ExponentialFactor" : 0.8
+	}
+}
