@@ -7,6 +7,7 @@ public struct RaycastOrigin
 	public Vector2[,] corners;
 	public Vector2 Center { get { return (corners[0, 0] + corners[1, 1]) / 2; } }
 	public Vector2 bodySizeWithSkin;
+
 	public void Init()
 	{
 		corners = new Vector2[DIM, DIM];
@@ -14,6 +15,8 @@ public struct RaycastOrigin
 
 	public void UpdateRayCastOrigins(RaycastCollider2D collider)
 	{
+		if (corners == null)
+			Init();
 		Bounds bounds = collider.body.bounds;
 		bounds.Expand(2 * -RaycastCollider2D.skinWidth);
 		for (int i = 0; i < DIM; i++)

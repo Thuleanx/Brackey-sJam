@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 8345865897147975877}
   - component: {fileID: 8345865897147975883}
   - component: {fileID: 17478182}
+  - component: {fileID: 166869335}
+  - component: {fileID: 4336333755261716871}
   m_Layer: 26
   m_Name: Kaiser
   m_TagString: Player
@@ -362,6 +364,7 @@ MonoBehaviour:
   baseHealthRegen: 1
   healthRegen: 1
   Level: 1
+  XP: 0
 --- !u!114 &8345865897147975873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +513,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50963252091bb4559ab4a62b5e38cbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &166869335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345865897147975899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dec7a2dabf374cff98916701ffc690b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveRate: 0.5
+  maxDissolve: 1.1
+--- !u!114 &4336333755261716871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345865897147975899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a394d4765a2174c7d93ed222a26ab97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGoldChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8345865896863322306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,15 +1290,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf5f8437fe0f441b8b2c096f87c1a7b3, type: 3}
---- !u!1 &3524280350046352148 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4844389540010448485, guid: cf5f8437fe0f441b8b2c096f87c1a7b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 8345865898054526321}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3524280350046352149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4844389540010448484, guid: cf5f8437fe0f441b8b2c096f87c1a7b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8345865898054526321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3524280350046352148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4844389540010448485, guid: cf5f8437fe0f441b8b2c096f87c1a7b3,
     type: 3}
   m_PrefabInstance: {fileID: 8345865898054526321}
   m_PrefabAsset: {fileID: 0}

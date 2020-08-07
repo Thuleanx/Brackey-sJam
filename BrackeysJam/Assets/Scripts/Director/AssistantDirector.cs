@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Director : MonoBehaviour
+public class AssistantDirector : MonoBehaviour
 {
-	public static Director Instance;
+	public static AssistantDirector Instance;
 
 	[HideInInspector]
 	public float timeElapsedSeconds = 0;

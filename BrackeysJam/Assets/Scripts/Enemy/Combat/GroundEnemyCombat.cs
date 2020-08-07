@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(MobCondition), typeof(GroundEnemyAnimator))]
 public class GroundEnemyCombat : CombatManager
@@ -9,11 +10,10 @@ public class GroundEnemyCombat : CombatManager
 
 	#region Components
 
-	GroundMovement movement;
-
-	MobCondition condition;
-	GameObject player;
-	GroundEnemyAnimator anim;
+	protected GroundMovement movement;
+	protected MobCondition condition;
+	protected GameObject player;
+	protected GroundEnemyAnimator anim;
 
 	Timers timers;
 
@@ -25,18 +25,17 @@ public class GroundEnemyCombat : CombatManager
 	[SerializeField] Vector2 attackRayStart = Vector2.zero;
 	[SerializeField] float attackRange = 3f;
 
-	void Awake() {
+	public override void Awake() {
 		condition = GetComponent<MobCondition>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<GroundEnemyAnimator>();
 		movement = GetComponent<GroundMovement>();
 
 		timers = new Timers();
-
 		timers.RegisterTimer("attackCD");
 	}
 
-	void Update() {
+	public virtual void Update() {
 		if (!condition.LockedMovement) {
 			if (!timers.ActiveAndNotExpired("attackCD")) {
 				Vector2 rayStart = attackRayStart;

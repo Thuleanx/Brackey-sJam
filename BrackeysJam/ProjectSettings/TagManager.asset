@@ -9,6 +9,7 @@ TagManager:
   - UIHealth
   - UIDifficultyIndicator
   - UIShield
+  - UIXP
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Enemy
   - Collectible
   - Player
   - Interactible

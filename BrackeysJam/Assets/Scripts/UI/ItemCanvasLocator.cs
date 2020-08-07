@@ -80,7 +80,5 @@ public class ItemCanvasLocator : MonoBehaviour
 				display.SetSprite(ItemSpriteHandler.Instance.GetItemSprite(items[i]));
 			}
 		}
-
-		print("UPDATED " + itemDisplay.Count);
 	}
 }

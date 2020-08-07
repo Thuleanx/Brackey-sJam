@@ -15,7 +15,7 @@ public class TimerDisplay : MonoBehaviour
 	}
 
 	void LateUpdate() {
-		int numSeconds = Mathf.FloorToInt(Director.Instance.timeElapsedSeconds);
+		int numSeconds = Mathf.FloorToInt(AssistantDirector.Instance.timeElapsedSeconds);
 		int hours = numSeconds / 60 / 60;
 		int minutes = numSeconds / 60 % 60;
 		int seconds = numSeconds % 60;

@@ -24,8 +24,18 @@ public class CombatManager : MonoBehaviour
 		GameObject obj = ObjectPool.Instance.Instantiate(projectiles[index].projectileTag);
 		obj.transform.position = projectiles[index].source.transform.position;
 		obj.transform.rotation = projectiles[index].source.transform.rotation * Quaternion.Euler(0f, 0f, projectiles[index].rotationOffset);
-		if (status != null)
-			obj.GetComponentInChildren<Hitbox>().AttachStatus(status);
+		if (status != null) {
+			obj.GetComponent<CombatManager>()?.AttachStatus(status);
+			obj.GetComponentInChildren<Hitbox>()?.AttachStatus(status);
+		}
+	}
+
+	public void AttachStatus(Status status) {
+		for (int i =0 ; i < hitboxes.Length; i++) {
+			TriggerHitbox(i);
+			hitboxes[i].GetComponent<Hitbox>().AttachStatus(status);
+			DisableHitbox(i);
+		}
 	}
 
 	public void TriggerHitbox(int index) {

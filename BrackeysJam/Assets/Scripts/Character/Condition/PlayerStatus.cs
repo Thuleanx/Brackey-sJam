@@ -12,7 +12,9 @@ public class PlayerStatus : Status
 	[SerializeField] float baseHealthRegen;
 
 	public float healthRegen;
+
 	public int Level = 1;
+	public float XP;
 
 	PlayerItemHandler handler;
 
@@ -63,5 +65,21 @@ public class PlayerStatus : Status
 		dmgReduction = GetItemEffect(Item.Teddy);
 
 		maxShield = GetItemEffect(Item.ArcaneShield) * maxHealth;
+	}
+
+	public float XPFormula(int level) {
+		return 20f * Mathf.Pow(1.55f, level - 2);
+	}
+
+	public float XPTotFormula(int level) {
+		return 20f * (1 - Mathf.Pow(1.55f, level - 1)) / (1 - 1.55f);
+	}
+
+	public void AcquireXP(float amt) {
+		XP += amt;
+		while (XPTotFormula(Level + 1) <= XP) {
+			// level up here
+			Level++;
+		}
 	}
 }

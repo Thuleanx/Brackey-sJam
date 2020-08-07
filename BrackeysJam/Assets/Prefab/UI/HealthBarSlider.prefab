@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6946887480988099782}
   - component: {fileID: 6946887480988099783}
   - component: {fileID: 6946887480988099781}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

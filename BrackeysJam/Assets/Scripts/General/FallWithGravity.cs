@@ -19,6 +19,8 @@ public class FallWithGravity : MonoBehaviour
 
 	void Update() {
 		velocity.y -= gravity;
+		if (controller.collisionInfo.AnyBot)
+			velocity.y = 0;
 	}
 
 	void LateUpdate() {

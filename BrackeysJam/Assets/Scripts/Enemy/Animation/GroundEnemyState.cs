@@ -6,5 +6,6 @@ public enum GroundEnemyState {
 	Death = 3,
 	Spawn = 4,
 	Jump = 5,
-	Fall = 6		
+	Fall = 6,
+	TP = 7	
 }

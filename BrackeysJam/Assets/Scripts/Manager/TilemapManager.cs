@@ -14,6 +14,8 @@ public class TilemapManager : MonoBehaviour
 	Vector2Int offset;
 	int[,] map;
 
+	List<Vector2Int> spawnableLocation;
+
 	void Awake() {
 		Instance = this;
 	}
@@ -55,13 +57,28 @@ public class TilemapManager : MonoBehaviour
 				}
 			}
 		}
+		spawnableLocation = new List<Vector2Int>();
 
 		for (int i = 0; i <= bounds.max.x - bounds.min.x; i++)
 		for (int j = 0; j <= bounds.max.y - bounds.min.y; j++)
 		{
 			if (map[i, j] == -1) map[i, j] = bounds.max.y - bounds.min.y + 1;
 			if (j > 0) map[i, j] = Mathf.Min(map[i, j], map[i, j - 1] + 1);
+
+			if (map[i,j] == 0)
+				spawnableLocation.Add(new Vector2Int(bounds.min.x + i, bounds.min.y + j));
 		}
+	}
+
+	public bool GetPossibleSpawn(Vector2 location, float range, ref Vector2Int result) {
+		List<Vector2Int> points = new List<Vector2Int>();
+		foreach (Vector2Int loc in spawnableLocation)
+			if (((Vector2) loc - location).magnitude < range)
+				points.Add(loc);
+		if (points.Count == 0)
+			return false;
+		result = points[UnityEngine.Random.Range(0, points.Count)];
+		return true;
 	}
 	
 	public bool HasTile(Vector2 pos) {

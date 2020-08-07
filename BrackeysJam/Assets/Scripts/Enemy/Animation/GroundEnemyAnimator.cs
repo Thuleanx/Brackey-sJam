@@ -9,6 +9,7 @@ public class GroundEnemyAnimator : MonoBehaviour
 	Animator anim;
 	SpriteRenderer sprite;
 	MobCondition condition;
+	[SerializeField] bool flipX;
 
 	void Awake() {
 		anim = GetComponent<Animator>();
@@ -28,14 +29,14 @@ public class GroundEnemyAnimator : MonoBehaviour
 
 
 	void LateUpdate() {
-		sprite.flipX = condition.faceDir > 0;
+		sprite.flipX = condition.faceDir > 0 ^ flipX;
 
 		if (!condition.LockedMovement) {
 			if (condition.onGround)
 				State = GroundEnemyState.Run;
 		}
 
-		if (State != GroundEnemyState.Attack)
+		if (State != GroundEnemyState.Attack && (int) State < 7)
 			condition.attacking = false;
 		if (State != GroundEnemyState.Spawn)
 			condition.spawning = false;

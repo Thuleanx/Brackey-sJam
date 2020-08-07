@@ -30,7 +30,7 @@ public class DifficultyIndicator : MonoBehaviour
 	}
 
 	void LateUpdate() {
-		float progress = (EnemyStatus.LevelProgress(Director.Instance.masterCoef) - 1) / 3;
+		float progress = (EnemyStatus.LevelProgress(AssistantDirector.Instance.masterCoef) - 1) / 3;
 		int lastColor = Mathf.Clamp(Mathf.FloorToInt(progress), 0, difficulties.Length - 1);
 		int nextColor = Mathf.Clamp(Mathf.CeilToInt(progress), 0, difficulties.Length - 1);
 

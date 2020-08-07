@@ -57,6 +57,7 @@ public class WormMovement : Movement
 		}
 
 		condition.faceDir = Mathf.Sign(velocity.x);
+		if (condition.dead) velocity = Vector2.zero;
 
 		transform.Translate(velocity * Time.deltaTime, Space.World);
 	}

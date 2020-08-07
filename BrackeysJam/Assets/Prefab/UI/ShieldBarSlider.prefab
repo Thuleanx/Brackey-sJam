@@ -83,7 +83,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.609
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -99,5 +99,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b78a1ed160bf4a67ba3ba97a4ca447a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barTag: 
-  entityTag: 
+  barTag: UIShield
+  entityTag: Player

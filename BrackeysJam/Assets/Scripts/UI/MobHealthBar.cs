@@ -8,7 +8,14 @@ using UnityEngine.UI;
 
 public class MobHealthBar: BarFollow
 {
-	[SerializeField] Status status;
+	Status status;
+	Vector2 position;
+
+	public override void Awake() {
+		base.Awake();
+		status = GetComponentInParent<Status>();
+		position = transform.localPosition;
+	}
 
 	public void RegisterStatus(Status status) {
 		this.status = status;
@@ -16,5 +23,7 @@ public class MobHealthBar: BarFollow
 
 	void Update() {
 		SetFill((float) status.Health / status.maxHealth);
+		transform.position = (Vector2) transform.parent.position + position;
+		transform.rotation = Quaternion.identity;
 	}	
 }
