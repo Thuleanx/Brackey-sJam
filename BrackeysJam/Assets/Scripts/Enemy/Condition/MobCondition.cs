@@ -28,6 +28,7 @@ public class MobCondition : Condition
 
 		timers.RegisterTimer("turnCD");
 		timers.RegisterTimer("jumpCD");
+		timers.RegisterTimer("playerSighted");
 	}
 
 	void OnEnable() {

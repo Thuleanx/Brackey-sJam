@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-	public int baseHealth, baseDamage;
+	public float baseHealth, baseDamage;
 	public float baseSpeed, baseCritMultiplier = 2f;
 
 	[SerializeField] float shieldRechargeRate = .1f;

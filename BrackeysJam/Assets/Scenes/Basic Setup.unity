@@ -131,8 +131,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7514844}
   - component: {fileID: 7514845}
-  - component: {fileID: 7514846}
   - component: {fileID: 7514847}
+  - component: {fileID: 7514846}
+  - component: {fileID: 7514849}
+  - component: {fileID: 7514848}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Untagged
@@ -148,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.89, y: 6.82, z: -6.0854917}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -193,7 +195,7 @@ SpriteRenderer:
   m_SortingLayerID: 1173081539
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6734625432437353699, guid: e997e4d43e5e4405ba2ee4b6c89b89b0,
+  m_Sprite: {fileID: -6734625432437353699, guid: 2503f918afc80b64a8d13e46965d088f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -214,14 +216,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7514843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b6dbb3e79a445c3991dbc0b29a822c, type: 3}
+  m_Script: {fileID: 11500000, guid: 502972b72779d4fe4b3739b3cf7d2fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  playerTag: Player
-  gravity: 5
-  bouyancyConstant: 7
-  terminalVelocity: 12
+  speed: 6
+  angularAccelerationPerSecond: 90
+  visionCone: 90
+  visionRange: 5
+  speedMultiplier: 2
 --- !u!95 &7514847
 Animator:
   serializedVersion: 3
@@ -241,6 +244,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7514848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4283cf7cda8441b81bb6d665783cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 2100
+  baseDamage: 6.5
+  baseSpeed: 6
+  baseCritMultiplier: 2
+  shieldRechargeRate: 0.1
+  timeToShieldRecharge: 5
+  damage: 0
+  health: 0
+  maxHealth: 0
+  speed: 0
+  critRate: 0
+  critMultiplier: 0
+  dmgReduction: 0
+  shield: 0
+  maxShield: 0
+--- !u!114 &7514849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0729d133c574aae94a00bd8660b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  onWall: 0
+  faceDir: 1
+  wallDir: 0
+  dead: 0
+  playerSighted: 0
+  attacking: 0
+  spawning: 0
 --- !u!1 &270668159
 GameObject:
   m_ObjectHideFlags: 0
