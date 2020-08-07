@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Map
   - UICanvas
+  - UIHealth
+  - UIDifficultyIndicator
+  - UIShield
   layers:
   - Default
   - TransparentFX
@@ -32,7 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Collectible
   - Player
   - Interactible
   - HurtHostile
@@ -54,6 +57,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 4013260539
+    locked: 0
+  - name: Item
+    uniqueID: 4119971639
     locked: 0
   - name: Entities
     uniqueID: 1173081539

@@ -7,16 +7,19 @@ public class Director : MonoBehaviour
 {
 	public static Director Instance;
 
-	float timeElapsedSeconds = 0;
+	[HideInInspector]
+	public float timeElapsedSeconds = 0;
 
 	#region Calculations 
 
 	[SerializeField] float timeScale;
-	float difficultyScale = 0;
+	float difficultyScale = 1;
 	int stagesCompleted;
 
 	[HideInInspector]
 	public float masterCoef;
+	[HideInInspector]
+	public float playerFactor = 1;
 
 	#endregion
 
@@ -34,6 +37,6 @@ public class Director : MonoBehaviour
 	}	
 
 	void LateUpdate() {
-		masterCoef = (1 + timeElapsedSeconds / 60f * timeScale) * Mathf.Pow(1.15f, stagesCompleted);
+		masterCoef = (1 + timeElapsedSeconds / 60f * timeScale * difficultyScale) * Mathf.Pow(1.15f, stagesCompleted);
 	}
 }

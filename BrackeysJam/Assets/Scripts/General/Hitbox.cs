@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Hitbox : MonoBehaviour
 {
-	Status status;
+	public Status status;
 	BoxCollider2D box;	
 
 	[SerializeField] LayerMask hurtboxMask;
@@ -16,10 +16,10 @@ public class Hitbox : MonoBehaviour
 
 	static int maxHitboxResults = 10;
 
-
 	void Start() {
 		box = GetComponent<BoxCollider2D>();
-		status = GetComponentInParent<Status>();
+		if (status == null)
+			status = GetComponentInParent<Status>();
 	}
 
 	public List<Hurtbox> GetOverlappingHurtbox() {
@@ -49,8 +49,16 @@ public class Hitbox : MonoBehaviour
 
 		foreach (Hurtbox hurtbox in hurtboxes) {
 			if (!hitlast.ContainsKey(hurtbox) || (damageFrequency > 0 && Time.time - hitlast[hurtbox] >= 1 / damageFrequency)) {
-				if (hurtbox.RegisterHit(status.damage * damageMultiplier))
+				float dmg = status.damage * damageMultiplier;
+
+				if (Random.Range(0, 1) < status.critRate)
+					dmg *= status.critMultiplier;
+
+				float dmgDealt = hurtbox.RegisterHit(dmg, this);
+				if (dmgDealt != 0) {
+					status.OnHit(hurtbox);
 					hitlast[hurtbox] = Time.time;
+				}
 			}
 		}
 	}

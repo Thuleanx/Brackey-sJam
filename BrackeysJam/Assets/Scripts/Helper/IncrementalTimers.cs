@@ -28,4 +28,8 @@ public class IncrementalTimers
 	public void Exhaust(string name) {
 		timeToExpire[name] = 0;
 	}
+
+	public float TimeLeft(string name) {
+		return timeToExpire[name];
+	}
 }

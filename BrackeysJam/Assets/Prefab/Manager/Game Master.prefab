@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3550122906884213519}
   - component: {fileID: 3550122906884213520}
   - component: {fileID: 3550122906884213521}
+  - component: {fileID: 262098388}
   m_Layer: 0
   m_Name: Game Master
   m_TagString: GameController
@@ -80,8 +81,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34eb1a0b1e10541eebaa5db1437feaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 1
+  timeElapsedSeconds: 0
+  timeScale: 0.2
   masterCoef: 0
+  playerFactor: 1
 --- !u!114 &3550122906884213521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,3 +105,37 @@ MonoBehaviour:
       type: 3}
     defaultCount: 10
     UI: 1
+--- !u!114 &262098388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550122906884213516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bf1165d76c433ea5b351dd9fc0fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpriteList:
+  - key: 0
+    value: {fileID: -6208574259140625158, guid: 90e565b3dba4b4bc4836b78305ad8758,
+      type: 3}
+  - key: 1
+    value: {fileID: -849936732645758453, guid: 90e565b3dba4b4bc4836b78305ad8758, type: 3}
+  - key: 2
+    value: {fileID: -639511312399035210, guid: 90e565b3dba4b4bc4836b78305ad8758, type: 3}
+  - key: 3
+    value: {fileID: -4967084604844223063, guid: 90e565b3dba4b4bc4836b78305ad8758,
+      type: 3}
+  - key: 4
+    value: {fileID: 7304373435895554616, guid: 90e565b3dba4b4bc4836b78305ad8758, type: 3}
+  - key: 5
+    value: {fileID: 4715158516703934550, guid: 90e565b3dba4b4bc4836b78305ad8758, type: 3}
+  - key: 6
+    value: {fileID: -3171265644203978750, guid: 90e565b3dba4b4bc4836b78305ad8758,
+      type: 3}
+  - key: 7
+    value: {fileID: 3905131148726735404, guid: 90e565b3dba4b4bc4836b78305ad8758, type: 3}
+  - key: 8
+    value: {fileID: 6338675957782176562, guid: 90e565b3dba4b4bc4836b78305ad8758, type: 3}

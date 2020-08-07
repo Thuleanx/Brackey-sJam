@@ -24,16 +24,16 @@ public class Hurtbox : MonoBehaviour
 		status = GetComponentInParent<Status>();
 	}
 
-	public bool RegisterHit(float damage)
+	public float RegisterHit(float damage, Hitbox hitbox)
 	{
 		if (canBeHit()) {
-			status.Health -= damage;
-			print(transform.parent.gameObject + " " + status.health);
+			status.DealDamage(damage);
 			if (status.Health == 0)
 				condition.dead = true;
-			return true;
+			status.OnGettingHit(hitbox);
+			return damage;
 		}
-		return false;
+		return 0;
 	}
 
 	public void GiveIframe(float duration) {

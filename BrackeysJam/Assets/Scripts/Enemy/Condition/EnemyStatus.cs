@@ -11,7 +11,11 @@ public class EnemyStatus : Status
 	float coefOnSpawn;
 
 	public int Level {
-		get { return Mathf.FloorToInt(1 + (coefOnSpawn - 1) * 3); }
+		get { return Mathf.FloorToInt(LevelProgress(coefOnSpawn)); }
+	}
+
+	public static float LevelProgress(float coef) {
+		return 1 + (coef - (Director.Instance == null ? 1 : Director.Instance.playerFactor)) * 3;
 	}
 
 	void OnEnable() {
