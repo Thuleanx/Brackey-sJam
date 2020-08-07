@@ -22,6 +22,10 @@ public class Hitbox : MonoBehaviour
 			status = GetComponentInParent<Status>();
 	}
 
+	public void AttachStatus(Status status) {
+		this.status = status;
+	}
+
 	public List<Hurtbox> GetOverlappingHurtbox() {
 		List<Hurtbox> results = new List<Hurtbox>();		
 		Collider2D[] receiver = new Collider2D[maxHitboxResults];

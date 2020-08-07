@@ -6,23 +6,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(EnemyStatus))]
 [RequireComponent(typeof(MobCondition))]
-public class WormMovement : MonoBehaviour
+public class WormMovement : Movement
 {
 	EnemyStatus status;
 	MobCondition condition;
 
 	[HideInInspector]
-	public Vector2 velocity;
-
-	[HideInInspector]
 	public float orientation = 0;
 
 	[SerializeField] float angularAccelerationPerSecond = 30f;
-
-	[SerializeField] float visionCone = 30f;
-	[SerializeField] float visionRange = 5f;
-
-	[SerializeField] float speedMultiplierWhileInSight = 2f;
 
 	GameObject player;
 
@@ -39,6 +31,8 @@ public class WormMovement : MonoBehaviour
 	}
 
 	void Update() {
+		condition.spawning = false;
+
 		if (!condition.LockedMovement) {
 			float speed = status.speed;
 
@@ -53,9 +47,6 @@ public class WormMovement : MonoBehaviour
 			if (accel >= Mathf.PI)
 				accel -= 2 * Mathf.PI;
 
-			bool inVision = accel > -visionCone / 2 * Mathf.Deg2Rad && accel < visionCone / 2 * Mathf.Deg2Rad &&
-				((Vector2)(player.transform.position - transform.position)).magnitude < visionRange;
-
 			float maxAngularAccel = (Time.deltaTime * angularAccelerationPerSecond * Mathf.Deg2Rad);
 			accel = Mathf.Clamp(accel, -maxAngularAccel, maxAngularAccel);
 
@@ -63,14 +54,11 @@ public class WormMovement : MonoBehaviour
 			orientation = RadClamp(orientation);
 
 			velocity = new Vector2(Mathf.Cos(orientation), Mathf.Sin(orientation)) * speed;
-
-			if (inVision)
-			{
-				velocity *= speedMultiplierWhileInSight;
-			}
-
 		}
-		transform.Translate(velocity * Time.deltaTime);
+
+		condition.faceDir = Mathf.Sign(velocity.x);
+
+		transform.Translate(velocity * Time.deltaTime, Space.World);
 	}
 
 	void OnGizmosDraw() {

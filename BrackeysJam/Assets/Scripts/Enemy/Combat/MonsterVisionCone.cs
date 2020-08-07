@@ -5,22 +5,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MobCondition))]
-[RequireComponent(typeof(WormMovement))]
+[RequireComponent(typeof(Movement))]
 public class MonsterVisionCone : MonoBehaviour
 {
 	MobCondition condition;
-	WormMovement movement;
+	Movement movement;
 
 	[SerializeField] float visionCone = 30f;
 	[SerializeField] float visionRange = 5f;
-
-	[SerializeField] float speedMultiplierWhileInSight = 2f;
+	[SerializeField] float memorySeconds = 2f;
 
 	GameObject player;
 
 	void Awake() {
 		player = GameObject.FindGameObjectWithTag("Player");
 		condition = GetComponent<MobCondition>();
+		movement = GetComponent<Movement>();
 	}
 
 	float RadClamp(float rad) {
@@ -30,20 +30,24 @@ public class MonsterVisionCone : MonoBehaviour
 	}
 
 	void LateUpdate() {
+		Vector2 desiredVelocity = ((Vector2)(player.transform.position - transform.position)).normalized;
 
-			Vector2 desiredVelocity = ((Vector2)(player.transform.position - transform.position)).normalized;
+		float desiredOrientation = Mathf.Atan2(desiredVelocity.y, desiredVelocity.x);
+		float orientation = Mathf.Atan2(movement.velocity.y, movement.velocity.x);
 
-			float desiredOrientation = Mathf.Atan2(desiredVelocity.y, desiredVelocity.x);
+		float accel = desiredOrientation - orientation;
 
-			float accel = desiredOrientation - movement.orientation;
+		accel = RadClamp(accel);
+		if (accel >= Mathf.PI)
+			accel -= 2 * Mathf.PI;
 
-			accel = RadClamp(accel);
-			if (accel >= Mathf.PI)
-				accel -= 2 * Mathf.PI;
 
-			condition.playerSighted  = accel > -visionCone / 2 * Mathf.Deg2Rad && accel < visionCone / 2 * Mathf.Deg2Rad &&
-				((Vector2)(player.transform.position - transform.position)).magnitude < visionRange;
-				
+		condition.playerSighted = accel > -visionCone / 2 * Mathf.Deg2Rad && accel < visionCone / 2 * Mathf.Deg2Rad &&
+			((Vector2)(player.transform.position - transform.position)).magnitude < visionRange;
+		if (condition.playerSighted) {
+			condition.timers.StartTimer("playerSighted", memorySeconds);
+		}
+
 	}
 }
 

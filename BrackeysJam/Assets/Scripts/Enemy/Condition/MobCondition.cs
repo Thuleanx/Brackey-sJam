@@ -33,10 +33,13 @@ public class MobCondition : Condition
 
 	void OnEnable() {
 		playerSighted = attacking = onGround = onWall = dead = false;
-		spawning = true;
 	}
 
 	void LateUpdate() {
+	}
+
+	public bool PlayerStillSighted {
+		get { return timers.ActiveAndNotExpired("playerSighted"); }
 	}
 
 	public bool LockedMovement {

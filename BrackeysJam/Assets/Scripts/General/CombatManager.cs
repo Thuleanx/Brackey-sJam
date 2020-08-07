@@ -3,9 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CombatManager : MonoBehaviour
+public class CombatManager : MonoBehaviour
 {
+	Status status;
 	[SerializeField] GameObject[] hitboxes;
+	[SerializeField] Projectile[] projectiles;
+
+	[System.Serializable]
+	public class Projectile {
+		public string projectileTag;
+		public GameObject source;
+		public float rotationOffset = 0f;
+	}
+
+	public virtual void Awake() {
+		status = GetComponent<Status>();
+	}
+
+	public void SpawnProjectile(int index) {
+		GameObject obj = ObjectPool.Instance.Instantiate(projectiles[index].projectileTag);
+		obj.transform.position = projectiles[index].source.transform.position;
+		obj.transform.rotation = projectiles[index].source.transform.rotation * Quaternion.Euler(0f, 0f, projectiles[index].rotationOffset);
+		if (status != null)
+			obj.GetComponentInChildren<Hitbox>().AttachStatus(status);
+	}
 
 	public void TriggerHitbox(int index) {
 		hitboxes[index].SetActive(true);

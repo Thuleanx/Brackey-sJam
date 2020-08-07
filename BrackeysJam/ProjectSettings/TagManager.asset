@@ -70,6 +70,9 @@ TagManager:
   - name: FX
     uniqueID: 1688176697
     locked: 0
+  - name: Attacks
+    uniqueID: 676711807
+    locked: 0
   - name: UI
     uniqueID: 4192140635
     locked: 0

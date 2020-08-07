@@ -23,7 +23,8 @@ public class PlayerCombat : CombatManager {
 
 	[SerializeField] float altAttackBufferTimeSeconds = 1f;
 
-	void Awake() {
+	public override void Awake() {
+		base.Awake();
 		int enumLength = Enum.GetNames(typeof(PlayerState)).Length;
 		abilities = new Ability[enumLength];
 		alt = new PlayerState[enumLength];

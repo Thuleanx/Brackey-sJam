@@ -105,6 +105,11 @@ MonoBehaviour:
       type: 3}
     defaultCount: 10
     UI: 1
+  - tag: 'Projectile: GodRay'
+    prefab: {fileID: 4677038821702194808, guid: ee5bd10d1a8be4512bb0f55fcca1095d,
+      type: 3}
+    defaultCount: 10
+    UI: 0
 --- !u!114 &262098388
 MonoBehaviour:
   m_ObjectHideFlags: 0

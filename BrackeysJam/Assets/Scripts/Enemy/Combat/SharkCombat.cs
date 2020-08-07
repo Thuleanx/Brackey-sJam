@@ -1,33 +1,34 @@
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // Using seek
 [RequireComponent(typeof(MobCondition))]
-[RequireComponent(typeof(FlyingMovement))]
-[RequireComponent(typeof(FlyingEnemyAnimator))]
+[RequireComponent(typeof(WormMovement))]
+[RequireComponent(typeof(SharkAnimator))]
 [RequireComponent(typeof(Status))]
-public class FlyingEnemyCombat : CombatManager {
+public class SharkCombat : CombatManager {
 
 	#region Components
 	MobCondition condition;
-	FlyingMovement movement;
-	FlyingEnemyAnimator anim;
+	Movement movement;
+	SharkAnimator anim;
 	Status status;
 
 	Timers timers;
 	#endregion
 
 	[SerializeField] float attackCoolDown = 2f;	
-	[SerializeField] float speedMultiplierWhileAttacking = 2f;
+	[SerializeField] float speedMultiplierWhileAttacking = 0f;
 
 	public override void Awake() {
 		base.Awake();
 		condition = GetComponent<MobCondition>();
-		movement = GetComponent<FlyingMovement>();
-		anim = GetComponent<FlyingEnemyAnimator>();
+		anim = GetComponent<SharkAnimator>();
 		status = GetComponent<Status>();
+		movement = GetComponent<WormMovement>();
 
 		timers = new Timers();
 		timers.RegisterTimer("attackCD");
@@ -37,7 +38,7 @@ public class FlyingEnemyCombat : CombatManager {
 		if (!condition.LockedMovement) {
 			if (condition.playerSighted && !timers.ActiveAndNotExpired("attackCD")) {
 				// trigger animator to attack
-				anim.State = FlyingEnemyState.Attack;
+				anim.State = SharkState.Attack;
 				condition.attacking = true;
 
 				if (movement.velocity != Vector2.zero)
