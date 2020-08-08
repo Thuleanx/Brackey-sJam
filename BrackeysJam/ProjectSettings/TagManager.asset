@@ -68,14 +68,14 @@ TagManager:
   - name: Foreground
     uniqueID: 4013260539
     locked: 0
-  - name: Front
-    uniqueID: 2437756205
-    locked: 0
   - name: Item
     uniqueID: 4119971639
     locked: 0
   - name: Entities
     uniqueID: 1173081539
+    locked: 0
+  - name: Front
+    uniqueID: 2437756205
     locked: 0
   - name: FX
     uniqueID: 1688176697
