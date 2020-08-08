@@ -39,6 +39,7 @@ public class PlayerAnimationController : MonoBehaviour
 			condition.attacking = false;
 			condition.lockAttacking = false;
 			condition.lockVelocityDuringAttack = false;
+			condition.immune = false;
 		}
 		UpdateCache();
 	}

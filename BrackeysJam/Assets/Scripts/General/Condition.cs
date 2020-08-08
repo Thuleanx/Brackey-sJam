@@ -6,7 +6,7 @@ using UnityEngine;
 public class Condition : MonoBehaviour
 {
 	[HideInInspector]
-	public bool onGround, onWall;
+	public bool onGround, onWall, immune;
 
 	[HideInInspector]
 	public float faceDir = 1, wallDir;
