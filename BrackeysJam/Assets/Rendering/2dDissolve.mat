@@ -28,5 +28,6 @@ Material:
     - Vector1_6C0FF5EA: 0.3
     - Vector1_ADCA38A8: 1.1
     - Vector1_E0B5AB04: 100
+    - _Fade: 1.1
     m_Colors:
     - Color_AA2A29F5: {r: 2.270603, g: 0.011887974, b: 0.011887974, a: 1}

@@ -26,7 +26,11 @@ public class ObjectPool : MonoBehaviour
 	
 
 	void Awake() {
-		Instance = this;
+		if (Instance == null) {
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		} else Destroy(gameObject);
+
 		canvas = GameObject.FindGameObjectWithTag(gameCanvasTag);
 		for (int i = 0; i < pools.Count; i++) {
 			tagToPoolIndex[pools[i].tag] = i;
@@ -77,5 +81,9 @@ public class ObjectPool : MonoBehaviour
 		Assert.IsTrue(objectQueues.ContainsKey(tag));
 
 		objectQueues[tag].Enqueue(obj);
+	}
+
+	void OnDestroy() {
+		if (Instance == this) Instance = null;
 	}
 }

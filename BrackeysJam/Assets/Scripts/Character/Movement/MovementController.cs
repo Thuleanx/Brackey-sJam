@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RaycastCollider2D))]
-[RequireComponent(typeof(Status))]
 [RequireComponent(typeof(PlayerCondition))]
 [RequireComponent(typeof(PlayerAnimationController))]
 public class MovementController : MonoBehaviour
@@ -109,13 +108,13 @@ public class MovementController : MonoBehaviour
 
 			if (!condition.LockedMovement)
 			{
+				float speed = status == null ? 3f : status.speed;
 
 				if (condition.onGround)
-					velocity.x = InputManager.Instance.axisInput.x * status.speed;
+					velocity.x = InputManager.Instance.axisInput.x * speed;
 				else
 				{
-					velocity.x = InputManager.Instance.axisInput.x * status.speed * airSpeedModifier;
-
+					velocity.x = InputManager.Instance.axisInput.x * speed * airSpeedModifier;
 					// float targetVelX = InputManager.Instance.axisInput.x * moveSpeed * airSpeedModifier;
 					// velocity.x = Mathf.SmoothDamp(velocity.x, targetVelX, ref airAccel, airEasingTime);
 				}

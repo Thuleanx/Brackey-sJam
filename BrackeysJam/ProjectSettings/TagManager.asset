@@ -10,6 +10,9 @@ TagManager:
   - UIDifficultyIndicator
   - UIShield
   - UIXP
+  - UITPProgress
+  - Anchor
+  - Bounds
   layers:
   - Default
   - TransparentFX
@@ -49,6 +52,12 @@ TagManager:
     locked: 0
   - name: Sky
     uniqueID: 2367950487
+    locked: 0
+  - name: Fog
+    uniqueID: 1350791475
+    locked: 0
+  - name: BG1
+    uniqueID: 999027753
     locked: 0
   - name: Background
     uniqueID: 4251170501

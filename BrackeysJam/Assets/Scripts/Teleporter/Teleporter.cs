@@ -2,20 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Interactable))]
 public class Teleporter : MonoBehaviour
 {
 	public static Teleporter Instance;
-	[SerializeField] float teleporterDurationSeconds = 90f;
-
-	[SerializeField]
-	Scene nextScene;
+	public float teleporterDurationSeconds = 5f;
 
 	Interactable interactable;
 
-	bool active, completed, queueNextStage;
+	[HideInInspector]
+	public bool active, completed, queueNextStage;
+
+	[SerializeField]
+	Canvas textBeforeActivation, textAfterActivation;
 
 	IncrementalTimers itimers;
 
@@ -23,13 +23,19 @@ public class Teleporter : MonoBehaviour
 		Instance = this;
 		interactable = GetComponent<Interactable>();
 
-		active = completed = false;
-		queueNextStage = true;
+		active = completed = queueNextStage = false;
+
+		itimers = new IncrementalTimers();
 		itimers.RegisterTimer("tpTimer");
+
+		textBeforeActivation.gameObject.SetActive(false);
+		textAfterActivation.gameObject.SetActive(false);
 	}
 
 	void Update() {
-		interactable.interactable = (!active || (completed && !queueNextStage));
+		interactable.interactable = (!active || (completed && !queueNextStage && (CatalogDirector.Instance == null || CatalogDirector.Instance.numberOfEnemies == 0)));
+		textBeforeActivation.gameObject.SetActive(!active && interactable.inRange);
+		textAfterActivation.gameObject.SetActive(completed && interactable.inRange && (CatalogDirector.Instance == null || CatalogDirector.Instance.numberOfEnemies == 0));
 	}
 
 	void LateUpdate() {
@@ -37,9 +43,19 @@ public class Teleporter : MonoBehaviour
 		completed = active && itimers.Expired("tpTimer");
 	}
 
+	public float GetTimeLeft() {
+		return itimers.TimeLeft("tpTimer");
+	}
+
 	public void ActivateTeleporter() {
 		if (!active) {
 			active = true;
-		}	
+			itimers.StartTimer("tpTimer", teleporterDurationSeconds);
+			interactable.interactable = false;
+		} else {
+			interactable.interactable = false;
+			queueNextStage = true;
+			TransitionManager.Instance.TransitionToNext();
+		}
 	}
 }

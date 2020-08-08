@@ -11,6 +11,15 @@ public class CatalogDirector : MonoBehaviour {
 	public int numberOfEnemies;
 
 	void Awake() {
-		Instance = this;
+		if (Instance == null) {
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		} else {
+			Destroy(gameObject);
+		}
+	}
+
+	void OnDestroy() {
+		if (Instance == this) Instance = null;
 	}
 }

@@ -22,8 +22,11 @@ public class InputManager : MonoBehaviour
 	public IncrementalTimers itimers;
 
 	void Awake() {
+		if (Instance == null)
+			Instance = this;
+		else
+			Destroy(gameObject);
 		InitTimers();
-		Instance = this;
 	}
 
 	public void InitTimers() {
@@ -82,5 +85,9 @@ public class InputManager : MonoBehaviour
 
 	void LateUpdate() {
 		RegisterInput();
+	}
+
+	void OnDestroy() {
+		if (Instance == this) Instance = null;
 	}
 }

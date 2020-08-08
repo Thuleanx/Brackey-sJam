@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: d7d8663109616094fb62aeaf89ac6c7a
+  - enabled: 1
+    path: Assets/Scenes/Cyber.unity
+    guid: a223452fccf57a64297f555509fac50a
+  - enabled: 1
+    path: Assets/Scenes/SteamPunk.unity
+    guid: dca28524768a32a44b771643adf6983b
+  - enabled: 1
+    path: Assets/Scenes/Viking.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Start 1.unity
+    guid: c3476a18cc4514c4f8b733a906fc3b3c
   m_configObjects: {}

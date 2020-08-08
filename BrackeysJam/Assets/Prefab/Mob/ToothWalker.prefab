@@ -256,7 +256,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1073741824
   attackCoolDown: 2
-  attackRayStart: {x: -1.41, y: -0.47}
+  attackRayStart: {x: -1.41, y: -1.16}
   attackRange: 2.82
 --- !u!114 &3179890241142624422
 MonoBehaviour:

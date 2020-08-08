@@ -26,8 +26,10 @@ public class AssistantDirector : MonoBehaviour
 	void Awake() {
 		if (Instance == null) {
 			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		} else {
+			Destroy(gameObject);
 		}
-		DontDestroyOnLoad(gameObject);
 
 		masterCoef = 1;
 	}
@@ -38,5 +40,9 @@ public class AssistantDirector : MonoBehaviour
 
 	void LateUpdate() {
 		masterCoef = (1 + timeElapsedSeconds / 60f * timeScale * difficultyScale) * Mathf.Pow(1.15f, stagesCompleted);
+	}
+
+	void OnDestroy() {
+		if (Instance == this) Instance = null;
 	}
 }

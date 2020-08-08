@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class TilemapManager : MonoBehaviour
 {
@@ -17,7 +18,15 @@ public class TilemapManager : MonoBehaviour
 	List<Vector2Int> spawnableLocation;
 
 	void Awake() {
-		Instance = this;
+		if (Instance == null) {
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		} else Destroy(gameObject);
+		SceneManager.sceneLoaded += OnSceneLoad;
+	}
+
+	void OnSceneLoad(Scene scene, LoadSceneMode mode) {
+		LoadMap();
 	}
 
 	void Start() {
@@ -79,6 +88,10 @@ public class TilemapManager : MonoBehaviour
 			return false;
 		result = points[UnityEngine.Random.Range(0, points.Count)];
 		return true;
+	}
+
+	void OnDestroy() {
+		if (Instance == this) Instance = null;
 	}
 	
 	public bool HasTile(Vector2 pos) {
