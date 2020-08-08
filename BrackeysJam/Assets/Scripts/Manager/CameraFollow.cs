@@ -35,7 +35,7 @@ public class CameraFollow : MonoBehaviour
 
 		transform.position = new Vector3(
 			Calculate.AsympEase(pos.x, target.x, .1f),
-			Calculate.AsympEase(pos.y, target.y, .02f),
+			Calculate.AsympEase(pos.y, target.y, .05f),
 			transform.position.z
 		);
 	}

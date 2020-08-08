@@ -98,7 +98,7 @@ public class MovementController : Movement
 		if (!condition.LockedVelocity) {
 			velocity.y -= gravity * Time.deltaTime;
 
-			if (raycastCollider.collisionInfo.AnyTop || condition.onGround)
+			if (raycastCollider.collisionInfo.AnyTop || (condition.onGround && velocity.y <= 0))
 				velocity.y = 0;
 
 			if (InputManager.Instance.axisInput.x != 0)

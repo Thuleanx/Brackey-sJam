@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class LaunchPad : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    float force;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerEnter2D(Collider2D collider) {
+        Movement movement = collider.GetComponent<Movement>();
+        if (movement !=null ) {
+            movement.velocity.y = force;
+            print(movement.velocity.y);
+        }
     }
 }
