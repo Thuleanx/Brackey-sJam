@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(RaycastCollider2D))]
 [RequireComponent(typeof(PlayerCondition))]
 [RequireComponent(typeof(PlayerAnimationController))]
-public class MovementController : MonoBehaviour
+public class MovementController : Movement
 {
 	#region Components
 	RaycastCollider2D raycastCollider;
@@ -17,8 +17,6 @@ public class MovementController : MonoBehaviour
 	#endregion
 
 	#region Rigid body
-	[HideInInspector]
-	public Vector2 velocity;
 	#endregion
 
 	#region Ability
