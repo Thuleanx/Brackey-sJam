@@ -31,8 +31,11 @@ public class Dissolve : MonoBehaviour
 
 		material.SetFloat("_Fade", fade);
 
-		if (fade == 0 && !CompareTag("Player"))
+		if (fade == 0 && !CompareTag("Player")) {
+			GetComponent<RewardPlayer>()?.GiveReward();
+			GetComponent<RewardPlayer>()?.DisableMinion();
 			gameObject.SetActive(false);
+		}
 	}
 }
 

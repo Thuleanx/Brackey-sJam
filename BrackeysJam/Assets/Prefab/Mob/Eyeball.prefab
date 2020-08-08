@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3179890241142624421}
   - component: {fileID: 3179890241142624422}
   - component: {fileID: 3024511106249097775}
+  - component: {fileID: -8935460154606225853}
   m_Layer: 0
   m_Name: Eyeball
   m_TagString: Untagged
@@ -286,6 +287,8 @@ MonoBehaviour:
   dmgReduction: 0
   shield: 0
   maxShield: 0
+  baseValue: 0
+  monsterValue: 0
 --- !u!114 &3024511106249097775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +301,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ef56c926bc448bc896361cf3346860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8935460154606225853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179890241142624443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e082545d272b149118ad1d84073f3c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  onWall: 0
+  faceDir: 1
+  wallDir: 0
+  dead: 0
+  playerTag: Player
 --- !u!114 &3179890242093717774
 MonoBehaviour:
   m_ObjectHideFlags: 0

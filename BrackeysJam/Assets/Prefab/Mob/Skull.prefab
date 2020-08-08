@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5196841534048715840}
   - component: {fileID: 5196841534048715854}
   - component: {fileID: 5196841534048715853}
+  - component: {fileID: -7385417201568595213}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1173081539
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 8020143640844766479, guid: 57e382d2bb71f4ca4887e45a01f539ec,
     type: 3}
@@ -124,10 +125,20 @@ MonoBehaviour:
   baseHealth: 60
   baseDamage: 5
   baseSpeed: 4
+  baseCritMultiplier: 2
+  shieldRechargeRate: 0.1
+  timeToShieldRecharge: 5
   damage: 0
   health: 0
   maxHealth: 0
   speed: 0
+  critRate: 0
+  critMultiplier: 0
+  dmgReduction: 0
+  shield: 0
+  maxShield: 0
+  baseValue: 0
+  monsterValue: 0
 --- !u!114 &5196841534048715855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,11 +155,10 @@ MonoBehaviour:
   onWall: 0
   faceDir: 1
   wallDir: 0
+  dead: 0
   playerSighted: 0
-  dashing: 0
-  wallJumping: 0
-  wallLeaping: 0
   attacking: 0
+  spawning: 0
 --- !u!114 &5196841534048715840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a44d8ebc3c55441cbd489188b4a04a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitboxes: []
+  projectiles: []
   attackCoolDown: 2
   speedMultiplierWhileAttacking: 2
 --- !u!114 &5196841534048715853
@@ -192,6 +204,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipX: 1
+--- !u!114 &-7385417201568595213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196841534048715845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e082545d272b149118ad1d84073f3c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  onWall: 0
+  faceDir: 1
+  wallDir: 0
+  dead: 0
+  playerTag: Player
 --- !u!1001 &5196841534428784910
 PrefabInstance:
   m_ObjectHideFlags: 0

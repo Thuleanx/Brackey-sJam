@@ -65,12 +65,12 @@ public class TilemapManager : MonoBehaviour
 			if (map[i, j] == -1) map[i, j] = bounds.max.y - bounds.min.y + 1;
 			if (j > 0) map[i, j] = Mathf.Min(map[i, j], map[i, j - 1] + 1);
 
-			if (map[i,j] == 0)
+			if (map[i,j] == 1)
 				spawnableLocation.Add(new Vector2Int(bounds.min.x + i, bounds.min.y + j));
 		}
 	}
 
-	public bool GetPossibleSpawn(Vector2 location, float range, ref Vector2Int result) {
+	public bool GetPossibleSpawn(Vector2 location, float range, ref Vector2 result) {
 		List<Vector2Int> points = new List<Vector2Int>();
 		foreach (Vector2Int loc in spawnableLocation)
 			if (((Vector2) loc - location).magnitude < range)

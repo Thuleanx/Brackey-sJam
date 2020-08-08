@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 5216663378093225454}
   - component: {fileID: 2085309139}
   - component: {fileID: 6388385559283602125}
+  - component: {fileID: 6540185399639288975}
   m_Layer: 24
   m_Name: Shark
   m_TagString: Untagged
@@ -190,6 +191,8 @@ MonoBehaviour:
   dmgReduction: 0
   shield: 0
   maxShield: 0
+  baseValue: 0
+  monsterValue: 0
 --- !u!114 &5216663378093225448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +279,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveRate: 0.5
   maxDissolve: 1.1
+--- !u!114 &6540185399639288975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216663378093225425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e082545d272b149118ad1d84073f3c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  onWall: 0
+  faceDir: 1
+  wallDir: 0
+  dead: 0
+  playerTag: Player
 --- !u!1 &5216663379204590619
 GameObject:
   m_ObjectHideFlags: 0

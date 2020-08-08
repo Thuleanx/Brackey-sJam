@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-	Status status;
+	protected Status status;
 	[SerializeField] GameObject[] hitboxes;
 	[SerializeField] Projectile[] projectiles;
 

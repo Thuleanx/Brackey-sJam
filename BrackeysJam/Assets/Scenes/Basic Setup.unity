@@ -247,12 +247,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1080212863 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3550122906884213518, guid: 44bc5b13037dc4182a25008e1d2ab25d,
-    type: 3}
-  m_PrefabInstance: {fileID: 3550122906672041088}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1109469352 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4640336057507572372, guid: 079934f427dd44eb58bda34b9e73e852,
@@ -43091,61 +43085,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2097395601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2097395602}
-  - component: {fileID: 2097395603}
-  m_Layer: 0
-  m_Name: FastDirector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2097395602
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097395601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1080212863}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2097395603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097395601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1d5089a8df24a47a9def41f6ec8521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creditMultiplier: 0.75
-  rewardMultiplier: 0.2
-  waveDuration: 2
-  waveBetweenLength: 10
-  spawnIntervalDuringWaveMin: 1
-  spawnIntervalDuringWaveMax: 2
-  spawnIntervalBetweenWavesMin: 4.5
-  spawnIntervalBetweenWavesMax: 9
-  testPrefab: {fileID: 421092612605994605, guid: 4a9d9118e20294cb4bf1af34ad2af209,
-    type: 3}
-  active: 1
-  credit: 0
 --- !u!1 &2140009748 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4640336058268006184, guid: 079934f427dd44eb58bda34b9e73e852,
@@ -43722,6 +43661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2097395603, guid: 44bc5b13037dc4182a25008e1d2ab25d, type: 3}
+      propertyPath: creditMultiplier
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3550122906884213516, guid: 44bc5b13037dc4182a25008e1d2ab25d,
         type: 3}
       propertyPath: m_Name
@@ -43782,11 +43725,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3550122906884213520, guid: 44bc5b13037dc4182a25008e1d2ab25d,
+    - target: {fileID: 3550122906884213521, guid: 44bc5b13037dc4182a25008e1d2ab25d,
         type: 3}
-      propertyPath: timeScale
-      value: 0.2
-      objectReference: {fileID: 0}
+      propertyPath: pools.Array.data[8].prefab
+      value: 
+      objectReference: {fileID: 3179890241142624443, guid: f6c7ca875ee03452ea0da21b28da9d45,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44bc5b13037dc4182a25008e1d2ab25d, type: 3}
 --- !u!1001 &4135797735406939123

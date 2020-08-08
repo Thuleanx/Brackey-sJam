@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 421092612605994611}
   - component: {fileID: 421092612605994608}
   - component: {fileID: 80868601}
+  - component: {fileID: 13359191738392449}
   m_Layer: 0
   m_Name: Trash Monster
   m_TagString: Untagged
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a0efcbc69ce4918994bc957febde26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipX: 0
 --- !u!114 &421092612605994611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +250,7 @@ MonoBehaviour:
   hitboxes:
   - {fileID: 421092613804290010}
   - {fileID: 4188320413722604237}
+  projectiles: []
   walls:
     serializedVersion: 2
     m_Bits: 256
@@ -284,6 +287,8 @@ MonoBehaviour:
   dmgReduction: 0
   shield: 0
   maxShield: 0
+  baseValue: 0
+  monsterValue: 0
 --- !u!114 &80868601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +301,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ef56c926bc448bc896361cf3346860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &13359191738392449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421092612605994605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e082545d272b149118ad1d84073f3c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  onWall: 0
+  faceDir: 1
+  wallDir: 0
+  dead: 0
+  playerTag: Player
 --- !u!114 &421092613804290008
 MonoBehaviour:
   m_ObjectHideFlags: 0

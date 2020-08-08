@@ -23,9 +23,11 @@ public class RewardPlayer : Condition
 	public void GiveReward() {
 		bank.AcquireGold(Mathf.CeilToInt(AssistantDirector.Instance.masterCoef * status.monsterValue));
 		pStatus.AcquireXP(Mathf.CeilToInt(2 * AssistantDirector.Instance.masterCoef * status.monsterValue));
+		print(Mathf.CeilToInt(AssistantDirector.Instance.masterCoef * status.monsterValue));
 	}
 
 	public void DisableMinion() {
 		gameObject.SetActive(false);
+		CatalogDirector.Instance.numberOfEnemies--;
 	}
 }

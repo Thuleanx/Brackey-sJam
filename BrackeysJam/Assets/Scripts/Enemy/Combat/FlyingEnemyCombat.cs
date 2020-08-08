@@ -14,7 +14,6 @@ public class FlyingEnemyCombat : CombatManager {
 	MobCondition condition;
 	FlyingMovement movement;
 	FlyingEnemyAnimator anim;
-	Status status;
 
 	Timers timers;
 	#endregion
@@ -27,7 +26,6 @@ public class FlyingEnemyCombat : CombatManager {
 		condition = GetComponent<MobCondition>();
 		movement = GetComponent<FlyingMovement>();
 		anim = GetComponent<FlyingEnemyAnimator>();
-		status = GetComponent<Status>();
 
 		timers = new Timers();
 		timers.RegisterTimer("attackCD");

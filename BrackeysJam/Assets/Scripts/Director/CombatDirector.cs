@@ -8,18 +8,22 @@ public class CombatDirector : MonoBehaviour {
 							rewardMultiplier = .2f,
 							waveDuration = 1f,
 							waveBetweenLength = 10f,
+							spawnRange = 10f,
 							spawnIntervalDuringWaveMin = .2f,
 							spawnIntervalDuringWaveMax = 1f,
 							spawnIntervalBetweenWavesMin = 4.5f,
 							spawnIntervalBetweenWavesMax = 9f;
-
-	[SerializeField] GameObject testPrefab;
+	[SerializeField] int maxEnemies = 40;
 	[SerializeField] string playerTag;
+
+	GameObject player;
 	
 	Timers timers;
 	
 	public bool active;
-	public float credit;
+
+	[HideInInspector]
+	float credit;
 
 	float spawnInterval;
 	bool newWave;
@@ -32,6 +36,8 @@ public class CombatDirector : MonoBehaviour {
 		timers = new Timers();
 		spawnInterval = Random.Range(spawnIntervalDuringWaveMin, spawnIntervalBetweenWavesMax);
 		newWave = true;
+
+		player = GameObject.FindGameObjectWithTag(playerTag);
 
 		timers.RegisterTimer("WaveCD");
 		timers.RegisterTimer("WaveDuration");
@@ -66,8 +72,41 @@ public class CombatDirector : MonoBehaviour {
 		}
 	}
 
+	MonsterSpawnInfo ChooseMonster() {
+		float weightedSum = 0;
+		foreach (MonsterSpawnInfo monster in CatalogDirector.Instance.info) {
+			if (credit > monster.cost)
+				weightedSum += monster.weight;
+		}
+		float target = Random.Range(0, weightedSum);
+		foreach (MonsterSpawnInfo monster in CatalogDirector.Instance.info) {
+			if (credit > monster.cost) {
+				target -= monster.weight;
+				if (target <= 0)
+					return monster;
+			}
+		}
+
+		return null;
+	}
+
 	public void Spawn() {
-		Vector2 pos = Vector2.zero;
-		ObjectPool.Instantiate(testPrefab, pos, Quaternion.identity);
+		Vector2 spawnPoint = Vector2.zero;
+		if (TilemapManager.Instance.GetPossibleSpawn(player.transform.position, spawnRange, ref spawnPoint) && CatalogDirector.Instance.numberOfEnemies < maxEnemies) {
+			spawnPoint += new Vector2(.5f, .5f);
+
+			MonsterSpawnInfo monster = ChooseMonster();
+
+			if (monster != null) {
+				GameObject obj = ObjectPool.Instance.Instantiate("Monster: " + monster.name, spawnPoint, Quaternion.identity);
+				Collider2D collider = obj.GetComponent<Collider2D>();
+				if (collider != null)
+					obj.transform.position += Vector3.up * (collider.bounds.size.y);
+				obj.GetComponent<EnemyStatus>().AssignValue(rewardMultiplier);
+				credit -= monster.cost;
+
+				CatalogDirector.Instance.numberOfEnemies++;
+			}
+		}
 	}
 } 

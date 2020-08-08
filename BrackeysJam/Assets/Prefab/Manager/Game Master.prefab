@@ -1,5 +1,185 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1133110405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133110406}
+  - component: {fileID: 1133110407}
+  m_Layer: 0
+  m_Name: SlowDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1133110406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133110405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3550122906884213518}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133110407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133110405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1d5089a8df24a47a9def41f6ec8521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditMultiplier: 0.75
+  rewardMultiplier: 0.2
+  waveDuration: 4
+  waveBetweenLength: 60
+  spawnRange: 10
+  spawnIntervalDuringWaveMin: 0.4
+  spawnIntervalDuringWaveMax: 2
+  spawnIntervalBetweenWavesMin: 22.5
+  spawnIntervalBetweenWavesMax: 30
+  playerTag: Player
+  active: 1
+--- !u!1 &1320428186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320428187}
+  - component: {fileID: 1320428188}
+  m_Layer: 0
+  m_Name: CatalogDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320428187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320428186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3550122906884213518}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320428188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320428186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6a7608dd229445f976de13b0a6d75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info:
+  - category: 0
+    name: BabyBoxer
+    cost: 8
+    weight: 1
+  - category: 0
+    name: Eyeball
+    cost: 28
+    weight: 1
+  - category: 1
+    name: Shark
+    cost: 200
+    weight: 1
+  - category: 0
+    name: Skull
+    cost: 10
+    weight: 1
+  - category: 0
+    name: Tooth Walker
+    cost: 40
+    weight: 1
+  - category: 0
+    name: Trash Monster
+    cost: 60
+    weight: 1
+  - category: 0
+    name: Wanderer
+    cost: 11
+    weight: 1
+--- !u!1 &2097395601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097395602}
+  - component: {fileID: 2097395603}
+  m_Layer: 0
+  m_Name: FastDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097395602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097395601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3550122906884213518}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2097395603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097395601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1d5089a8df24a47a9def41f6ec8521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditMultiplier: 0.75
+  rewardMultiplier: 0.2
+  waveDuration: 2
+  waveBetweenLength: 10
+  spawnRange: 10
+  spawnIntervalDuringWaveMin: 0.2
+  spawnIntervalDuringWaveMax: 1
+  spawnIntervalBetweenWavesMin: 4.5
+  spawnIntervalBetweenWavesMax: 9
+  playerTag: Player
+  active: 1
 --- !u!1 &3550122906884213516
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +211,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.5613184, y: -0.46049026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2097395602}
+  - {fileID: 1320428187}
+  - {fileID: 1133110406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeElapsedSeconds: 0
-  timeScale: 0
+  timeScale: 0.2
   masterCoef: 0
   playerFactor: 1
 --- !u!114 &3550122906884213521
@@ -118,6 +301,38 @@ MonoBehaviour:
   - tag: 'Interatible: Chest'
     prefab: {fileID: 7671853197430275850, guid: 174f0f0092ce547448234b9fc0dc19fa,
       type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: BabyBoxer'
+    prefab: {fileID: 421092612605994605, guid: 8177e2936dda047d4a147c58f6e082fd, type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: Eyeball'
+    prefab: {fileID: 3179890241142624443, guid: 798600e1f459542c59ba78b138c78a90,
+      type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: Shark'
+    prefab: {fileID: 5216663378093225425, guid: 5c41b237d445b42a89b4ba8baf809220,
+      type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: Skull'
+    prefab: {fileID: 5196841534048715845, guid: ab145b75e870c4c479e64ed695758879,
+      type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: Tooth Walker'
+    prefab: {fileID: 7671853197430275850, guid: 174f0f0092ce547448234b9fc0dc19fa,
+      type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: Trash Monster'
+    prefab: {fileID: 421092612605994605, guid: a6c076c89386c44508ec11579532d268, type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Monster: Wanderer'
+    prefab: {fileID: 421092612605994605, guid: 4a9d9118e20294cb4bf1af34ad2af209, type: 3}
     defaultCount: 10
     UI: 0
 --- !u!114 &262098388

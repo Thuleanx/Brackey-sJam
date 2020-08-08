@@ -15,8 +15,6 @@ public class SharkCombat : CombatManager {
 	MobCondition condition;
 	Movement movement;
 	SharkAnimator anim;
-	[HideInInspector]
-	Status status;
 	Timers timers;
 	#endregion
 
