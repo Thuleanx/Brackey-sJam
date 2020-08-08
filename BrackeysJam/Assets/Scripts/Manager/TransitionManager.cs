@@ -44,9 +44,17 @@ public class TransitionManager : MonoBehaviour
 		StartCoroutine(LoadLevel(info.Length - 1));
 	}
 
+	public void LoadFirst() {
+		StartCoroutine(LoadLevel(0));
+	}
+
 	IEnumerator LoadLevel(int index) {
 		yield return new WaitForSeconds(transitionTime);
 
+		string[] names = {"Start", "Cyber", "SteamPunk", "Viking"};
+
 		SceneManager.LoadScene(index);
+		print(names[index]);
+		AudioManager.Instance.Play("Music" + names[index]);
 	}
 }

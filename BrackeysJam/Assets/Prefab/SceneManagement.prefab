@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424f7f7021c6e473f98424c1db1bbafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionTime: 5
+  transitionTime: 3
   info:
   - scene:
       m_Handle: 0

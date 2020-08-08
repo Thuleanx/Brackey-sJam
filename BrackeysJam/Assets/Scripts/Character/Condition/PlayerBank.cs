@@ -5,12 +5,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerBank : MonoBehaviour
 {
 	int money;
 	[HideInInspector]
 	public UnityEvent onGoldChangeEvent = new UnityEvent();
+
+	void Awake() {
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+		GetComponent<PlayerStatus>().AcquireXP(money);
+		money = 0;
+	}
 
 	public int GetGold() {
 		return money;

@@ -24,8 +24,6 @@ public class InputManager : MonoBehaviour
 	void Awake() {
 		if (Instance == null)
 			Instance = this;
-		else
-			Destroy(gameObject);
 		InitTimers();
 	}
 
@@ -38,6 +36,12 @@ public class InputManager : MonoBehaviour
 		timers.RegisterTimer("S2Buffer");
 		timers.RegisterTimer("S3Buffer");
 		timers.RegisterTimer("S4Buffer");
+	}
+
+	void Update()
+	{
+		if (Instance == null)
+			Instance = this;
 	}
 
 	public void RegisterInput() {

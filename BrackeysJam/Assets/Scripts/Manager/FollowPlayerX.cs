@@ -17,6 +17,7 @@ public class FollowPlayerX : MonoBehaviour
 	}
 
 	void Update() {
+		SeekFollowPosition();
 		transform.position = new Vector3(
 			followPosition.position.x,
 			transform.position.y,

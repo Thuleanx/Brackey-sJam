@@ -4,11 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 [RequireComponent(typeof(PlayerItemHandler))]
 public class PlayerStatus : Status
 {
 	static PlayerStatus Instance;
+
 	static float baseHealthGainPerLevel = .3f, baseDamageGainPerLevel = .2f, healthRegenPerLevel = .2f;
 
 	[SerializeField] string playerAnchorTag = "Anchor";
@@ -29,7 +31,7 @@ public class PlayerStatus : Status
 		if (Instance == null) {
 			Instance = this;
 			DontDestroyOnLoad(gameObject);
-		} else Destroy(gameObject);
+		} else if (Instance != this) Destroy(gameObject);
 
 		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
@@ -47,6 +49,7 @@ public class PlayerStatus : Status
 		damage = baseDamage + Mathf.FloorToInt(baseDamage * (Level - 1) * baseHealthGainPerLevel);
 		maxHealth = baseHealth + Mathf.CeilToInt(baseDamage * (Level - 1) * baseDamageGainPerLevel);
 		health = maxHealth;
+		speed = baseSpeed;
 	}
 
 	float GetItemEffect(Item item) {

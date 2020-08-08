@@ -29,10 +29,9 @@ public class ItemEffect {
 				return 1 - 1 / (1 + (data.StackingEffect * stacks));
 			if (data.StackingType == "Exponential")
 				return Mathf.Pow(data.ExponentialFactor, stacks);
-
-
 		} else {
 			Debug.Log("Item not found : " + item);
+			return -1111111;
 		}
 
 		return 0;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 [RequireComponent(typeof(RaycastCollider2D))]
 [RequireComponent(typeof(PlayerCondition))]
@@ -93,8 +94,18 @@ public class MovementController : Movement
 			condition.timers.StartTimer("wallJumpBuffer", InputManager.Instance.inputBufferTimeSeconds);
 	}
 
+
+	void RegribComponent() {
+		raycastCollider = GetComponent<RaycastCollider2D>();
+		condition = GetComponent<PlayerCondition>();
+		wallMovement = GetComponent<WallMovement>();
+		status = GetComponent<Status>();
+		anim = GetComponent<PlayerAnimationController>();
+	}
+
 	void Update()
 	{
+		RegribComponent();
 		if (!condition.LockedVelocity) {
 			velocity.y -= gravity * Time.deltaTime;
 
@@ -127,7 +138,8 @@ public class MovementController : Movement
 				}
 				else if (InputManager.KeyUp(InputManager.Instance.jump))
 					LowJump();
-			}
+
+			} 
 
 			// terminal velocity
 			velocity.y = Mathf.Clamp(velocity.y, -terminalVelocity, Mathf.Infinity);

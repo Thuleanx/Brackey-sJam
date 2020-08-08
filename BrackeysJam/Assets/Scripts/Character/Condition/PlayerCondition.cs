@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerCondition : Condition
 {
 	[HideInInspector]
-	public bool dashing, wallJumping, wallLeaping, attacking, down, lockAttacking, lockVelocityDuringAttack;
+	public bool dashing, wallJumping, wallLeaping, attacking, lockAttacking, lockVelocityDuringAttack;
 
 	[HideInInspector]
 	public Timers timers;
@@ -20,7 +20,7 @@ public class PlayerCondition : Condition
 	}
 
 	void OnEnable() {
-		down = false;
+		dashing = wallJumping = wallLeaping = attacking = lockAttacking = lockVelocityDuringAttack = false;
 	}
 
 	void InitTimers() {
@@ -36,19 +36,20 @@ public class PlayerCondition : Condition
 	}
 
 	void LateUpdate() {
-		if (!LockedMovement)
+		if (!LockedMovement) {
 			InputManager.Instance.DecrementTimers();
+		}
 	}
 
 	public bool LockedVelocity {
-		get { return down || lockVelocityDuringAttack || timers.ActiveAndNotExpired("controlTime"); }
+		get { return lockVelocityDuringAttack || timers.ActiveAndNotExpired("controlTime"); }
 	}
 
 	public bool LockedMovement {
-		get { return lockAttacking || timers.ActiveAndNotExpired("controlTime") || down; }
+		get { return lockAttacking || timers.ActiveAndNotExpired("controlTime"); }
 	}
 
 	public bool LockedAttack {
-		get { return attacking || timers.ActiveAndNotExpired("controlTime") || down; }
+		get { return attacking || timers.ActiveAndNotExpired("controlTime"); }
 	}
 }

@@ -9,6 +9,7 @@ public class Dissolve : MonoBehaviour
 {
 	Material material;
 	Condition condition;
+	bool transed;
 
 	float fade;
 	[SerializeField] float dissolveRate = .5f;
@@ -35,6 +36,9 @@ public class Dissolve : MonoBehaviour
 			GetComponent<RewardPlayer>()?.GiveReward();
 			GetComponent<RewardPlayer>()?.DisableMinion();
 			gameObject.SetActive(false);
+		} else if (fade == 0 && !transed) {
+			transed = true;
+			TransitionManager.Instance.LoadFirst();
 		}
 	}
 }
