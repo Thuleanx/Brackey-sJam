@@ -75,6 +75,7 @@ public class PlayerCombat : CombatManager {
 			if (itimers.Expired(name) && InputManager.Instance.timers.ActiveAndNotExpired(name + "Buffer")) {
 				condition.attacking = true;
 				
+				bool refreshCD = false;
 				if (alt[(int) attack] != 0 && !itimers.Expired(name + "Alt")) {
 					// trigger alt attack	
 					int rattack = (int) alt[(int) attack];
@@ -86,6 +87,7 @@ public class PlayerCombat : CombatManager {
 						condition.lockAttacking = true;
 					if (abilities[(int) rattack].iframe)
 						condition.immune = true;
+					refreshCD = abilities[rattack].cooldownRefresh;
 
 					itimers.Exhaust(name + "Alt");
 				} else {
@@ -98,6 +100,8 @@ public class PlayerCombat : CombatManager {
 
 					if (abilities[(int) attack].iframe)
 						condition.immune = true;
+
+					refreshCD = abilities[(int) attack].cooldownRefresh;
 					
 
 					itimers.StartTimer(name + "Alt", altAttackBufferTimeSeconds);
@@ -106,6 +110,8 @@ public class PlayerCombat : CombatManager {
 
 				itimers.Exhaust(name);
 				InputManager.Instance.timers.SetActive(name + "Buffer", false);
+
+				if (refreshCD) itimers.ExhaustAll();
 
 				if (ability.cooldown > 0)
 					itimers.StartTimer(name, ability.cooldown);

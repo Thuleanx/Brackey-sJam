@@ -29,6 +29,11 @@ public class IncrementalTimers
 		timeToExpire[name] = 0;
 	}
 
+	public void ExhaustAll() {
+		foreach (var name in timeToExpire.Keys)
+			Exhaust(name);
+	}
+
 	public float TimeLeft(string name) {
 		return timeToExpire[name];
 	}

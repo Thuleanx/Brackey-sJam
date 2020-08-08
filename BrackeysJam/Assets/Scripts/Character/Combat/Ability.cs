@@ -9,7 +9,7 @@ public abstract class Ability : MonoBehaviour {
 
 	public PlayerState attackState;	
 	public float cooldown;
-	public bool iframe;
+	public bool iframe, cooldownRefresh;
 
 	public bool commital;
 

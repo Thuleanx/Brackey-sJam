@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 0
   onWall: 0
+  immune: 0
   faceDir: 0
   wallDir: 0
   dead: 0
@@ -429,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackState: 4
   cooldown: 0
+  iframe: 0
   commital: 0
   alt: 0
   originalState: 0
@@ -446,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackState: 9
   cooldown: 0
+  iframe: 0
   commital: 0
   alt: 1
   originalState: 4
@@ -463,6 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackState: 5
   cooldown: 5
+  iframe: 0
   commital: 0
   alt: 0
   originalState: 0
@@ -479,7 +483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackState: 6
-  cooldown: 1
+  cooldown: 2.5
+  iframe: 1
   commital: 0
   alt: 0
   originalState: 0
@@ -499,7 +504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackState: 7
-  cooldown: 10
+  cooldown: 6
+  iframe: 1
   commital: 1
   alt: 0
   originalState: 0
