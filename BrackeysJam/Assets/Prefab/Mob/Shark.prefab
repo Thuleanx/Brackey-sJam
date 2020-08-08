@@ -96,7 +96,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1173081539
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -6734625432437353699, guid: 2503f918afc80b64a8d13e46965d088f,
     type: 3}
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4283cf7cda8441b81bb6d665783cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 2100
-  baseDamage: 6.5
+  baseHealth: 900
+  baseDamage: 16
   baseSpeed: 6
   baseCritMultiplier: 2
   shieldRechargeRate: 0.1
@@ -191,7 +191,7 @@ MonoBehaviour:
   dmgReduction: 0
   shield: 0
   maxShield: 0
-  baseValue: 0
+  baseValue: 115
   monsterValue: 0
 --- !u!114 &5216663378093225448
 MonoBehaviour:
@@ -5057,7 +5057,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1688176697
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0

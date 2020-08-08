@@ -82,11 +82,10 @@ public class PlayerCombat : CombatManager {
 					abilities[rattack].Execute();
 					anim.State = (PlayerState) rattack;
 
-					if (abilities[rattack].commital)
-						condition.lockAttacking = true;
-					
 					if (abilities[(int) rattack].commital)
 						condition.lockAttacking = true;
+					if (abilities[(int) rattack].iframe)
+						condition.immune = true;
 
 					itimers.Exhaust(name + "Alt");
 				} else {
@@ -97,8 +96,9 @@ public class PlayerCombat : CombatManager {
 					if (abilities[(int) attack].commital)
 						condition.lockAttacking = true;
 
-					if (abilities[(int) attack].commital)
-						condition.lockAttacking = true;
+					if (abilities[(int) attack].iframe)
+						condition.immune = true;
+					
 
 					itimers.StartTimer(name + "Alt", altAttackBufferTimeSeconds);
 				}

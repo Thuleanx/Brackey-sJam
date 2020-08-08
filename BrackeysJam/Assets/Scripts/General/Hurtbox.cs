@@ -42,6 +42,6 @@ public class Hurtbox : MonoBehaviour
 
 	public bool canBeHit()
 	{
-		return !timers.ActiveAndNotExpired("iframe");
+		return !timers.ActiveAndNotExpired("iframe") && !condition.immune;
 	}
 }

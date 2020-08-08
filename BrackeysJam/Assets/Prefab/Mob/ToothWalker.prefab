@@ -82,7 +82,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1173081539
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 4761265735121949625, guid: 25b24585dfd414e21aef6f082b7da81d,
     type: 3}
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4283cf7cda8441b81bb6d665783cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 80
+  baseHealth: 600
   baseDamage: 12
   baseSpeed: 5
   baseCritMultiplier: 2
@@ -285,7 +285,7 @@ MonoBehaviour:
   dmgReduction: 0
   shield: 0
   maxShield: 0
-  baseValue: 0
+  baseValue: 40
   monsterValue: 0
 --- !u!114 &3024511106249097775
 MonoBehaviour:
@@ -413,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 4595891232891571042, guid: def133236d3324219948201b41587e22,
         type: 3}
       propertyPath: damageMultiplier
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4595891232891571043, guid: def133236d3324219948201b41587e22,
         type: 3}

@@ -83,7 +83,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1173081539
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 5742072001356106478, guid: 762d936db800e4457b92e6c302c65a30,
     type: 3}
@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4283cf7cda8441b81bb6d665783cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 80
-  baseDamage: 12
+  baseHealth: 300
+  baseDamage: 19
   baseSpeed: 4.5
   baseCritMultiplier: 2
   shieldRechargeRate: 0.1
@@ -287,7 +287,7 @@ MonoBehaviour:
   dmgReduction: 0
   shield: 0
   maxShield: 0
-  baseValue: 0
+  baseValue: 60
   monsterValue: 0
 --- !u!114 &80868601
 MonoBehaviour:
@@ -771,6 +771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595891232891571042, guid: def133236d3324219948201b41587e22,
+        type: 3}
+      propertyPath: damageMultiplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4595891232891571043, guid: def133236d3324219948201b41587e22,
         type: 3}
