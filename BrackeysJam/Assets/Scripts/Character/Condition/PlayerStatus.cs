@@ -9,7 +9,6 @@ using TMPro;
 [RequireComponent(typeof(PlayerItemHandler))]
 public class PlayerStatus : Status
 {
-	static PlayerStatus Instance;
 
 	static float baseHealthGainPerLevel = .3f, baseDamageGainPerLevel = .2f, healthRegenPerLevel = .2f;
 
@@ -27,22 +26,6 @@ public class PlayerStatus : Status
 	public override void Awake() {
 		base.Awake();
 		handler = GetComponent<PlayerItemHandler>();
-
-		if (Instance == null) {
-			Instance = this;
-			DontDestroyOnLoad(gameObject);
-		} else if (Instance != this) Destroy(gameObject);
-
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
-
-	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-		transform.position = (Vector2) GameObject.FindGameObjectWithTag(playerAnchorTag).transform.position;	
-	}
-
-	void OnDestroy() {
-		if (Instance == this) Instance = null;
-		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 
 	void OnEnable() {
@@ -50,6 +33,7 @@ public class PlayerStatus : Status
 		maxHealth = baseHealth + Mathf.CeilToInt(baseDamage * (Level - 1) * baseDamageGainPerLevel);
 		health = maxHealth;
 		speed = baseSpeed;
+		healthRegen = baseHealthRegen;
 	}
 
 	float GetItemEffect(Item item) {
@@ -102,6 +86,7 @@ public class PlayerStatus : Status
 		while (XPTotFormula(Level + 1) <= XP) {
 			// level up here
 			Level++;
+			health = maxHealth;
 		}
 	}
 }
