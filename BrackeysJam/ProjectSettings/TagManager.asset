@@ -59,6 +59,9 @@ TagManager:
   - name: BG1
     uniqueID: 999027753
     locked: 0
+  - name: FogFront
+    uniqueID: 1574515525
+    locked: 0
   - name: Background
     uniqueID: 4251170501
     locked: 0
@@ -82,6 +85,9 @@ TagManager:
     locked: 0
   - name: Attacks
     uniqueID: 676711807
+    locked: 0
+  - name: UITransient
+    uniqueID: 1017843127
     locked: 0
   - name: UI
     uniqueID: 4192140635

@@ -398,6 +398,16 @@ MonoBehaviour:
     prefab: {fileID: 421092612605994605, guid: 4a9d9118e20294cb4bf1af34ad2af209, type: 3}
     defaultCount: 10
     UI: 0
+  - tag: 'Particle: Slash Impact'
+    prefab: {fileID: 9059752444867198310, guid: 4780f2cc7050341b7ac243d22cb21a66,
+      type: 3}
+    defaultCount: 10
+    UI: 0
+  - tag: 'Message: Damage Popup'
+    prefab: {fileID: 7357450698636939851, guid: 30d2bd3650261441fb60117a18c49d52,
+      type: 3}
+    defaultCount: 10
+    UI: 0
 --- !u!114 &262098388
 MonoBehaviour:
   m_ObjectHideFlags: 0

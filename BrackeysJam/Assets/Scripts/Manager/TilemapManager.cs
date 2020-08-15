@@ -86,7 +86,7 @@ public class TilemapManager : MonoBehaviour
 				points.Add(loc);
 		if (points.Count == 0)
 			return false;
-		result = points[UnityEngine.Random.Range(0, points.Count)];
+		result = points[(int) Thuleanx.Random.Range(0, points.Count)];
 		return true;
 	}
 

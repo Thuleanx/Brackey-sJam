@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq; 
 
 public class IncrementalTimers
 {
@@ -30,8 +31,10 @@ public class IncrementalTimers
 	}
 
 	public void ExhaustAll() {
-		foreach (var name in timeToExpire.Keys)
-			Exhaust(name);
+		for (int i = 0; i < timeToExpire.Count; i++) {
+			var item = timeToExpire.ElementAt(i);
+			Exhaust(item.Key);
+		}
 	}
 
 	public float TimeLeft(string name) {

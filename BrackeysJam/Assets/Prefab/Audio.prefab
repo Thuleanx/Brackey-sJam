@@ -67,5 +67,47 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 3f926fa153f824022945386d95080db1, type: 3}
     volume: 1
     pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicBasic Setup
+    clip: {fileID: 8300000, guid: f7943473807f12b4e8220e2c2362aafb, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BossSpawn
+    clip: {fileID: 8300000, guid: 723791760fbac40c2b9cdf5b73d9cbfd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SharkRoar
+    clip: {fileID: 8300000, guid: 3198d61121d4d4979910e999ba59c81a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SharkAttack
+    clip: {fileID: 8300000, guid: 677239a1f6e5f4df8959da1c9e0d6959, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Sizzle
+    clip: {fileID: 8300000, guid: e01c77c8de228400ead0a0d80d61870a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SharkAttackImpact
+    clip: {fileID: 8300000, guid: b509f48041c8047d29a1c4820b8039c3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BasicSpawn
+    clip: {fileID: 8300000, guid: 14a8b6b63d239479e8d5bba9e71341dd, type: 3}
+    volume: 0.187
+    pitch: 1
     loop: 0
     source: {fileID: 0}

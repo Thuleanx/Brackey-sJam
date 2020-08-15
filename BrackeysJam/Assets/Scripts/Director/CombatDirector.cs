@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CombatDirector : MonoBehaviour {
+	static string BossSpawnSound = "BossSpawn", BasicSpawnSound = "BasicSpawn";
+
 	[SerializeField] float 	creditMultiplier = .75f, 
 							rewardMultiplier = .2f,
 							waveDuration = 1f,
@@ -38,7 +40,7 @@ public class CombatDirector : MonoBehaviour {
 
 	void Awake() {
 		timers = new Timers();
-		spawnInterval = Random.Range(spawnIntervalDuringWaveMin, spawnIntervalBetweenWavesMax);
+		spawnInterval = Thuleanx.Random.Range(spawnIntervalDuringWaveMin, spawnIntervalBetweenWavesMax);
 		newWave = true;
 
 		player = GameObject.FindGameObjectWithTag(playerTag);
@@ -52,7 +54,7 @@ public class CombatDirector : MonoBehaviour {
 	}
 
 	void OnSceneLoad(Scene scene, LoadSceneMode mode) {
-		spawnInterval = Random.Range(spawnIntervalDuringWaveMin, spawnIntervalBetweenWavesMax);
+		spawnInterval = Thuleanx.Random.Range(spawnIntervalDuringWaveMin, spawnIntervalBetweenWavesMax);
 		newWave = true;
 		credit = 0;
 		active = false;
@@ -75,7 +77,7 @@ public class CombatDirector : MonoBehaviour {
 				newWave = false;
 
 				if (timers.Expired("WaveDuration")) {
-					spawnInterval = Random.Range(spawnIntervalDuringWaveMin, spawnIntervalDuringWaveMax);
+					spawnInterval = Thuleanx.Random.Range(spawnIntervalDuringWaveMin, spawnIntervalDuringWaveMax);
 					newWave = true;
 					timers.StartTimer("WaveCD", waveBetweenLength);
 				} else if (timers.Expired("SpawnCD")) {
@@ -89,7 +91,7 @@ public class CombatDirector : MonoBehaviour {
 					if (teleporter && !bossSpawned)
 						bossSpawned |= ForceSpawnBoss();
 					else Spawn();
-					timers.StartTimer("SpawnCD", Random.Range(spawnIntervalBetweenWavesMin, spawnIntervalBetweenWavesMax));
+					timers.StartTimer("SpawnCD", Thuleanx.Random.Range(spawnIntervalBetweenWavesMin, spawnIntervalBetweenWavesMax));
 				}
 			}
 		} else if (teleporterDirector != null && !teleporter) {
@@ -109,7 +111,7 @@ public class CombatDirector : MonoBehaviour {
 			if (credit > monster.cost)
 				weightedSum += monster.weight;
 		}
-		float target = Random.Range(0, weightedSum);
+		float target = Thuleanx.Random.Range(0, weightedSum);
 		foreach (MonsterSpawnInfo monster in CatalogDirector.Instance.info) {
 			if (credit > monster.cost) {
 				target -= monster.weight;
@@ -127,7 +129,7 @@ public class CombatDirector : MonoBehaviour {
 			if (credit > monster.cost && monster.category == category)
 				weightedSum += monster.weight;
 		}
-		float target = Random.Range(0, weightedSum);
+		float target = Thuleanx.Random.Range(0, weightedSum);
 		foreach (MonsterSpawnInfo monster in CatalogDirector.Instance.info) {
 			if (credit > monster.cost && monster.category == category) {
 				target -= monster.weight;
@@ -147,13 +149,7 @@ public class CombatDirector : MonoBehaviour {
 			MonsterSpawnInfo monster = ChooseMonster();
 
 			if (monster != null) {
-				GameObject obj = ObjectPool.Instance.Instantiate("Monster: " + monster.name, spawnPoint, Quaternion.identity);
-				Collider2D collider = obj.GetComponent<Collider2D>();
-				if (collider != null)
-					obj.transform.position += Vector3.up * (collider.bounds.size.y);
-				obj.GetComponent<EnemyStatus>().AssignValue(rewardMultiplier);
-				credit -= monster.cost;
-
+				ForceSpawn(monster, spawnPoint);
 				CatalogDirector.Instance.numberOfEnemies++;
 				return true;
 			}
@@ -173,16 +169,24 @@ public class CombatDirector : MonoBehaviour {
 				monster = ChooseMonster(MonsterCategory.MiniBoss);
 			}
 
-			GameObject obj = ObjectPool.Instance.Instantiate("Monster: " + monster.name, spawnPoint, Quaternion.identity);
-			Collider2D collider = obj.GetComponent<Collider2D>();
-			if (collider != null)
-				obj.transform.position += Vector3.up * (collider.bounds.size.y);
-			obj.GetComponent<EnemyStatus>().AssignValue(rewardMultiplier);
-			credit -= monster.cost;
-
+			ForceSpawn(monster, spawnPoint);
 			CatalogDirector.Instance.numberOfEnemies++;
 			return true;
 		}
 		return false;
+	}
+
+	public void ForceSpawn(MonsterSpawnInfo monster, Vector2 spawnPoint) {
+		GameObject obj = ObjectPool.Instance.Instantiate("Monster: " + monster.name, spawnPoint, Quaternion.identity);
+		Collider2D collider = obj.GetComponent<Collider2D>();
+		if (collider != null)
+			obj.transform.position += Vector3.up * (collider.bounds.size.y);
+		obj.GetComponent<EnemyStatus>().AssignValue(rewardMultiplier);
+		credit -= monster.cost;
+
+		if (monster.category == MonsterCategory.Basic)
+			AudioManager.Instance.Play(BasicSpawnSound);
+		if (monster.category == MonsterCategory.MiniBoss)
+			AudioManager.Instance.Play(BossSpawnSound);
 	}
 } 

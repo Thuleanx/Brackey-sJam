@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2130003090}
   - component: {fileID: 2130003092}
   - component: {fileID: -4360427141253268820}
+  - component: {fileID: 720559731700436325}
   m_Layer: 0
   m_Name: RayAttack
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 676711807
-  m_SortingLayer: 9
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 2913503642380365109, guid: a4f0eb095c6994b8a9d965983fc7d400,
     type: 3}
@@ -147,6 +148,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
+--- !u!114 &720559731700436325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677038821702194808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0264be8700224415ba0f8e10567bd6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4677038821345220815
 PrefabInstance:
   m_ObjectHideFlags: 0

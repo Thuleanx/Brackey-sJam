@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 3179890241142624422}
   - component: {fileID: 3024511106249097775}
   - component: {fileID: -6352279856939201838}
+  - component: {fileID: -8586179658735416123}
   m_Layer: 0
   m_Name: ToothWalker
   m_TagString: Untagged
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 0
   onWall: 0
+  immune: 0
   faceDir: 1
   wallDir: 0
   dead: 0
@@ -217,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7831af5df4b744e678852f93cd42d0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0}
   jumpHeight: 2
   timeToJumpApexSeconds: 0.2
   turnAdjustmentDistance: 3
@@ -276,6 +279,9 @@ MonoBehaviour:
   baseCritMultiplier: 2
   shieldRechargeRate: 0.1
   timeToShieldRecharge: 5
+  impactTag: 
+  impactFlip: 0
+  knockBackForce: 0.2
   damage: 0
   health: 0
   maxHealth: 0
@@ -313,10 +319,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 0
   onWall: 0
+  immune: 0
   faceDir: 1
   wallDir: 0
   dead: 0
   playerTag: Player
+--- !u!114 &-8586179658735416123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179890241142624443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd27405e433745d592902262da071ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteMat: {fileID: 2100000, guid: cb52d3c12d4c24c4ca4f4a8c86f25489, type: 2}
 --- !u!114 &3179890242093717774
 MonoBehaviour:
   m_ObjectHideFlags: 0
